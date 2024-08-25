@@ -20,15 +20,29 @@
         </div>
 
     </div>
- 
+
+
 
     <div class="row gap-3">
-        <div class="col-2 bg-secondary p-3" style="border-radius:25px;"><strong>Total Fee:</strong> <br>
-            Nrs.{{ number_format($total_fee, 2) }}<br></div>
-        <div class="col-2 bg-secondary btn-warning" style="border-radius:25px;"><strong>Total Remaining Fee:</strong>
-            Nrs.{{ number_format($total_remaining_fee, 2) }}<br></div>
-        <div class="col-2 bg-secondary p-3" style="border-radius:25px;"><strong><strong>Total Paid Fee:</strong>
-                Nrs.{{ number_format($total_paid_fee, 2) }}</div>
+        <div class="card col-2 d-flex align-items-center justify-content-center pt-3 bg-warning">
+            <div class="card-body text-center" style="color: white;">
+                <strong>Total Fee:</strong> <br>
+                Nrs.{{ number_format($total_fee, 2) }}<br>
+            </div>
+        </div>
+        <div class="card col-3 d-flex align-items-center justify-content-center pt-3 bg-danger">
+            <div class="card-body text-center" style="color: rgb(255, 255, 255);">
+                <strong>Total Remaining Fee:</strong>
+                Nrs.{{ number_format($total_remaining_fee, 2) }}<br>
+            </div>
+        </div>
+        <div class="card col-2 d-flex align-items-center justify-content-center pt-3 bg-success">
+            <div class="card-body text-center" style="color: white;">
+                <strong>Total Paid Fee:</strong>
+                Nrs.{{ number_format($total_paid_fee, 2) }}<br>
+            </div>
+        </div>
+
     </div>
 
 

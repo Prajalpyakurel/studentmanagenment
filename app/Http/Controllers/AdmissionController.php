@@ -59,6 +59,8 @@ class AdmissionController extends Controller
         return view('admin.admissions.show', compact('admission'));
     }
 
+
+
     public function edit(Admission $admission)
     {
         $courses = Course::all();
@@ -86,46 +88,42 @@ class AdmissionController extends Controller
 
         return redirect()->route('admin.admissions.index')->with('success', 'Admission deleted successfully.');
     }
-    public function exportCSV()
+    public function report()
     {
-        $filename = 'admissions.csv';
+        $today = now()->startOfDay();
+        $last7Days = now()->subDays(7)->startOfDay();
+        $lastMonth = now()->subMonth()->startOfMonth();
+        $previousMonth = now()->subMonthsNoOverflow(2)->startOfMonth();
+        $startOfYear = now()->startOfYear();
 
-        $headers = [
-            'Content-Type' => 'text/csv',
-            'Content-Disposition' => "attachment; filename=\"$filename\"",
-            'Pragma' => 'no-cache',
-            'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0',
-            'Expires' => '0',
-        ];
+        // Calculate collections
+        $todaysCollection = Admission::where('created_at', '>=', $today)->sum('total_fee') - Admission::where('created_at', '>=', $today)->sum('remaining_fee');
+        $last7DaysCollection = Admission::where('created_at', '>=', $last7Days)->sum('total_fee') - Admission::where('created_at', '>=', $last7Days)->sum('remaining_fee');
+        $lastMonthCollection = Admission::whereBetween('created_at', [now()->startOfMonth(), now()->endOfMonth()])->sum('total_fee') - Admission::whereBetween('created_at', [now()->startOfMonth(), now()->endOfMonth()])->sum('remaining_fee');
+        $previousMonthCollection = Admission::whereBetween('created_at', [$previousMonth, $lastMonth->endOfMonth()])->sum('total_fee') - Admission::whereBetween('created_at', [$previousMonth, $lastMonth->endOfMonth()])->sum('remaining_fee');
+        $last12MonthsCollection = Admission::whereBetween('created_at', [$startOfYear, now()->endOfYear()])->sum('total_fee') - Admission::whereBetween('created_at', [$startOfYear, now()->endOfYear()])->sum('remaining_fee');
 
-        return response()->stream(function () {
-            $handle = fopen('php://output', 'w');
+        // Calculate admissions count
+        $todaysAdmissions = Admission::where('created_at', '>=', $today)->count();
+        $last7DaysAdmissions = Admission::where('created_at', '>=', $last7Days)->count();
+        $lastMonthAdmissions = Admission::whereBetween('created_at', [now()->startOfMonth(), now()->endOfMonth()])->count();
+        $previousMonthAdmissions = Admission::whereBetween('created_at', [$previousMonth, $lastMonth->endOfMonth()])->count();
+        $last12MonthsAdmissions = Admission::whereBetween('created_at', [$startOfYear, now()->endOfYear()])->count();
 
-            // Add CSV headers
-            fputcsv($handle, ['Name', 'Phone', 'Course', 'Total Fee', 'Remaining Fee', 'Created At', 'Updated At']);
-
-            // Fetch and process data in chunks
-            Admission::chunk(25, function ($admissions) use ($handle) {
-                foreach ($admissions as $admission) {
-                    $data = [
-                        $admission->name,
-                        $admission->phone,
-                        $admission->course->name,
-                        $admission->total_fee,
-                        $admission->remaining_fee,
-                        $admission->created_at,
-                        $admission->updated_at,
-                    ];
-
-                    // Write data to a CSV file
-                    fputcsv($handle, $data);
-                }
-            });
-
-            // Close CSV file handle
-            fclose($handle);
-        }, 200, $headers);
+        return view('home', compact(
+            'todaysCollection',
+            'last7DaysCollection',
+            'lastMonthCollection',
+            'previousMonthCollection',
+            'last12MonthsCollection',
+            'todaysAdmissions',
+            'last7DaysAdmissions',
+            'lastMonthAdmissions',
+            'previousMonthAdmissions',
+            'last12MonthsAdmissions'
+        ));
     }
+
 
 }
 
