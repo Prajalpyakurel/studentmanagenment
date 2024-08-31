@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.main')
 
 @section('content')
     <h1>Admissions</h1>
@@ -85,5 +85,10 @@
                 </tr>
             @endforeach
         </tbody>
+   <!-- Pagination Links -->
+
     </table>
+    <div class="d-flex justify-content-center">
+        {{ $admissions->links('vendor.pagination.bootstrap-5') }}
+    </div>
 @endsection

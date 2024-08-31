@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('admin.layouts.main')
 @section('content')
     <h1>Create New Course</h1>
 
@@ -18,7 +17,7 @@
             <input type="number" name="duration" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="price">Price ($)</label>
+            <label for="price">Price (Nrs.)</label>
             <input type="number" name="price" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Create</button>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.main')
 
 @section('content')
     <h1>Receipt Details</h1>

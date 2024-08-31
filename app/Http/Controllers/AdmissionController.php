@@ -1,37 +1,54 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Receipt;
 use App\Models\Admission;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class AdmissionController extends Controller
 {
     public function index(Request $request)
-{
-    // Capture the search query
-    $search = $request->input('search');
+    {
+        // Capture the search query
+        $search = $request->input('search');
 
-    // Query the admissions with search criteria
-    $admissions = Admission::with('course')
-        ->when($search, function ($query, $search) {
-            return $query->where('name', 'LIKE', "%{$search}%")
-                         ->orWhere('phone', 'LIKE', "%{$search}%")
-                         ->orWhereHas('course', function ($q) use ($search) {
-                             $q->where('title', 'LIKE', "%{$search}%");
-                         });
-        })
-        ->get();
+        // Query the admissions with search criteria, order by latest, and paginate the results
+        $admissions = Admission::with('course')
+            ->when($search, function ($query, $search) {
+                return $query->where('name', 'LIKE', "%{$search}%")
+                             ->orWhere('phone', 'LIKE', "%{$search}%")
+                             ->orWhereHas('course', function ($q) use ($search) {
+                                 $q->where('title', 'LIKE', "%{$search}%");
+                             });
+            })
+            ->orderBy('created_at', 'desc') // Order by latest admissions first
+            ->paginate(10); // Paginate results, 10 per page
 
-    // Calculate the total fees
-    $total_fee = $admissions->sum('total_fee');
-    $total_remaining_fee = $admissions->sum('remaining_fee');
-    $total_paid_fee = $total_fee - $total_remaining_fee;
+        // Calculate the total fees
+        $total_fee = Admission::when($search, function ($query, $search) {
+                        return $query->where('name', 'LIKE', "%{$search}%")
+                                     ->orWhere('phone', 'LIKE', "%{$search}%")
+                                     ->orWhereHas('course', function ($q) use ($search) {
+                                         $q->where('title', 'LIKE', "%{$search}%");
+                                     });
+                    })->sum('total_fee');
 
-    // Pass the search query and totals to the view
-    return view('admin.admissions.index', compact('admissions', 'total_fee', 'total_remaining_fee', 'total_paid_fee', 'search'));
-}
+        $total_remaining_fee = Admission::when($search, function ($query, $search) {
+                                return $query->where('name', 'LIKE', "%{$search}%")
+                                             ->orWhere('phone', 'LIKE', "%{$search}%")
+                                             ->orWhereHas('course', function ($q) use ($search) {
+                                                 $q->where('title', 'LIKE', "%{$search}%");
+                                             });
+                            })->sum('remaining_fee');
+
+        $total_paid_fee = $total_fee - $total_remaining_fee;
+
+        // Pass the search query and totals to the view
+        return view('admin.admissions.index', compact('admissions', 'total_fee', 'total_remaining_fee', 'total_paid_fee', 'search'));
+    }
+
 
     public function create()
     {
@@ -41,6 +58,7 @@ class AdmissionController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'phone' => 'required|unique:admissions',
             'name' => 'required|string|max:255',
@@ -48,6 +66,7 @@ class AdmissionController extends Controller
             'total_fee' => 'required|numeric',
             'remaining_fee' => 'required|numeric',
         ]);
+
 
         Admission::create($request->all());
 
@@ -90,18 +109,20 @@ class AdmissionController extends Controller
     }
     public function report()
     {
-        $today = now()->startOfDay();
+        $today = Carbon::today();
         $last7Days = now()->subDays(7)->startOfDay();
         $lastMonth = now()->subMonth()->startOfMonth();
         $previousMonth = now()->subMonthsNoOverflow(2)->startOfMonth();
         $startOfYear = now()->startOfYear();
 
-        // Calculate collections
-        $todaysCollection = Admission::where('created_at', '>=', $today)->sum('total_fee') - Admission::where('created_at', '>=', $today)->sum('remaining_fee');
-        $last7DaysCollection = Admission::where('created_at', '>=', $last7Days)->sum('total_fee') - Admission::where('created_at', '>=', $last7Days)->sum('remaining_fee');
-        $lastMonthCollection = Admission::whereBetween('created_at', [now()->startOfMonth(), now()->endOfMonth()])->sum('total_fee') - Admission::whereBetween('created_at', [now()->startOfMonth(), now()->endOfMonth()])->sum('remaining_fee');
-        $previousMonthCollection = Admission::whereBetween('created_at', [$previousMonth, $lastMonth->endOfMonth()])->sum('total_fee') - Admission::whereBetween('created_at', [$previousMonth, $lastMonth->endOfMonth()])->sum('remaining_fee');
-        $last12MonthsCollection = Admission::whereBetween('created_at', [$startOfYear, now()->endOfYear()])->sum('total_fee') - Admission::whereBetween('created_at', [$startOfYear, now()->endOfYear()])->sum('remaining_fee');
+        // Correct today's collection calculation
+        $todaysCollection = Receipt::whereDate('payment_date', $today)->sum('amount_received');
+
+        // Calculate collections for the last 7 days, last month, previous month, and last 12 months
+        $last7DaysCollection = Receipt::where('payment_date', '>=', $last7Days)->sum('amount_received');
+        $lastMonthCollection = Receipt::whereBetween('payment_date', [now()->startOfMonth(), now()->endOfMonth()])->sum('amount_received');
+        $previousMonthCollection = Receipt::whereBetween('payment_date', [$previousMonth, $lastMonth->endOfMonth()])->sum('amount_received');
+        $last12MonthsCollection = Receipt::whereBetween('payment_date', [$startOfYear, now()->endOfYear()])->sum('amount_received');
 
         // Calculate admissions count
         $todaysAdmissions = Admission::where('created_at', '>=', $today)->count();
@@ -123,6 +144,7 @@ class AdmissionController extends Controller
             'last12MonthsAdmissions'
         ));
     }
+
 
 
 }

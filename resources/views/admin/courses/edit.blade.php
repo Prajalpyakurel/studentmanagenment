@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.main')
 
 @section('content')
     <h1>Edit Course</h1>
@@ -19,7 +19,7 @@
             <input type="number" name="duration" class="form-control" value="{{ $course->duration }}" required>
         </div>
         <div class="form-group">
-            <label for="price">Price ($)</label>
+            <label for="price">Price (Nrs.)</label>
             <input type="number" name="price" class="form-control" value="{{ $course->price }}">
         </div>
         <button type="submit" class="btn btn-primary">Update</button>

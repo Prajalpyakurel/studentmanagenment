@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.main')
 
 @section('content')
     <h1>All Courses</h1>
@@ -25,7 +25,7 @@
                 <tr>
                     <td>{{ $course->title }}</td>
                     <td>{{ $course->duration }} hours</td>
-                    <td>${{ $course->price }}</td>
+                    <td>Nrs.{{ $course->price }}</td>
                     <td>
                         <a href="{{ route('admin.courses.show', $course->id) }}" class="btn btn-info">View</a>
                         <a href="{{ route('admin.courses.edit', $course->id) }}" class="btn btn-warning">Edit</a>

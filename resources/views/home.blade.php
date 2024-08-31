@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.main')
 
 @section('content')
     <div class="container">
@@ -14,7 +14,7 @@
                         <div class="card text-white bg-info shadow-sm">
                             <div class="card-body text-center">
                                 <h5 class="card-title">Today's Collection</h5>
-                                <p class="card-text display-6">${{ number_format($todaysCollection, 2) }}</p>
+                                <p class="card-text display-6">Nrs.{{ number_format($todaysCollection, 2) }}</p>
                             </div>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                         <div class="card text-white bg-primary shadow-sm">
                             <div class="card-body text-center">
                                 <h5 class="card-title">Last 7 Days Collection</h5>
-                                <p class="card-text display-6">${{ number_format($last7DaysCollection, 2) }}</p>
+                                <p class="card-text display-6">Nrs.{{ number_format($last7DaysCollection, 2) }}</p>
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                         <div class="card text-white bg-success shadow-sm">
                             <div class="card-body text-center">
                                 <h5 class="card-title">This Month's Collection</h5>
-                                <p class="card-text display-6">${{ number_format($lastMonthCollection, 2) }}</p>
+                                <p class="card-text display-6">Nrs.{{ number_format($lastMonthCollection, 2) }}</p>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                         <div class="card text-white bg-warning shadow-sm">
                             <div class="card-body text-center">
                                 <h5 class="card-title">Previous Month's Collection</h5>
-                                <p class="card-text display-6">${{ number_format($previousMonthCollection, 2) }}</p>
+                                <p class="card-text display-6">Nrs.{{ number_format($previousMonthCollection, 2) }}</p>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         <div class="card text-white bg-danger shadow-sm">
                             <div class="card-body text-center">
                                 <h5 class="card-title">Last 12 Months Collection</h5>
-                                <p class="card-text display-6">${{ number_format($last12MonthsCollection, 2) }}</p>
+                                <p class="card-text display-6">Nrs.{{ number_format($last12MonthsCollection, 2) }}</p>
                             </div>
                         </div>
                     </div>

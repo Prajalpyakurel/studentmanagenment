@@ -13,6 +13,9 @@ class CreateReceiptsTable extends Migration
             $table->string('phone'); // Link to the admission's phone number
             $table->decimal('amount_received', 8, 2);
             $table->date('payment_date');
+            $table->string('payment_method')->default('cash'); // Add payment method (cash/bank)
+            $table->string('bank_name')->nullable(); // Add bank name if payment_method is bank
+            $table->string('transaction_id')->nullable(); // Add transaction ID if payment_method is bank
             $table->timestamps();
 
             // Foreign key to ensure referential integrity
