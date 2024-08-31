@@ -51,66 +51,48 @@
           </a>
           <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
+        <style>
+             /* Additional styles for hover effects */
+        .nav-link {
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
 
-        {{-- <div class="search-bar">
-          <form class="search-form d-flex align-items-center" method="POST" action="#">
-            <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-          </form>
-        </div><!-- End Search Bar --> --}}
+        .nav-link:hover {
+            background-color: #f0f0f0;
+            color: #007bff;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        </style>
+        <div class="search-bar">
+            <div class="container">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.courses.index')}}">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.admissions.index')}}">Admission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.receipts.index')}}">Receipt</a>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- End Search Bar -->
 
         <nav class="header-nav ms-auto">
-          <ul class="d-flex align-items-center">
 
 
 
-            <li class="nav-item dropdown pe-3">
-                <ul class="navbar-nav ms-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                        @endif
 
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
+               <!-- Logout Button -->
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-flex">
+                @csrf
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
 
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-danger text-white" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </li>
-                    @endguest
-                </ul>
-            </li>
 
 
           </ul>

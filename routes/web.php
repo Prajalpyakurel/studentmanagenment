@@ -43,13 +43,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/receipts/{id}/edit', [ReceiptController::class, 'edit'])->name('receipts.edit');
     Route::put('/receipts/{id}', [ReceiptController::class, 'update'])->name('receipts.update');
 
-    // Cash Flow routes
+    // Routes for CashFlow management
     Route::get('/cashflows', [CashFlowController::class, 'index'])->name('cashflows.index');
     Route::get('/cashflows/create', [CashFlowController::class, 'create'])->name('cashflows.create');
     Route::post('/cashflows', [CashFlowController::class, 'store'])->name('cashflows.store');
-    Route::get('/cashflows/{cashFlow}/edit', [CashFlowController::class, 'edit'])->name('cashflows.edit');
-    Route::put('/cashflows/{cashFlow}', [CashFlowController::class, 'update'])->name('cashflows.update');
-    Route::delete('/cashflows/{cashFlow}', [CashFlowController::class, 'destroy'])->name('cashflows.destroy');
+    Route::get('/cashflows/{id}/edit', [CashFlowController::class, 'edit'])->name('cashflows.edit');
+    Route::put('/cashflows/{id}', [CashFlowController::class, 'update'])->name('cashflows.update');
+    Route::delete('/cashflows/{id}', [CashFlowController::class, 'destroy'])->name('cashflows.destroy');
+
 });
 
 

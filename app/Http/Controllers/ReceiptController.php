@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Receipt;
 use App\Models\Admission;
+use App\Models\CashFlow;
 use Illuminate\Http\Request;
 
 class ReceiptController extends Controller
@@ -44,9 +45,7 @@ class ReceiptController extends Controller
             'phone' => 'required|exists:admissions,phone',
             'amount_received' => 'required|numeric|min:0',
             'payment_date' => 'required|date',
-            'payment_method' => 'required|in:cash,bank',
-            'bank_name' => 'required_if:payment_method,bank',
-            'transaction_id' => 'required_if:payment_method,bank',
+            'payment_method' => 'required|string', // Cash or Bank
         ]);
 
         $admission = Admission::where('phone', $request->phone)->first();
@@ -55,6 +54,7 @@ class ReceiptController extends Controller
             return back()->withErrors(['phone' => 'No admission found for this phone number.']);
         }
 
+        // Check if the payment already clears the total fee
         $totalPaidFee = Receipt::where('phone', $request->phone)
             ->sum('amount_received') + $request->amount_received;
 
@@ -63,23 +63,33 @@ class ReceiptController extends Controller
                 return back()->withErrors(['amount_received' => 'Payment amount exceeds the remaining fee.']);
             }
 
+            // Payment already cleared
             return back()->withErrors(['amount_received' => 'Payment already cleared.']);
         }
 
-        Receipt::create([
+        // Create the receipt
+        $receipt = Receipt::create([
             'phone' => $request->phone,
             'amount_received' => $request->amount_received,
             'payment_date' => $request->payment_date,
             'payment_method' => $request->payment_method,
-            'bank_name' => $request->bank_name,
-            'transaction_id' => $request->transaction_id,
         ]);
 
+        // Update the remaining fee in the admission record
         $admission->remaining_fee -= $request->amount_received;
         $admission->save();
 
-        return redirect()->route('admin.receipts.create')->with('success', 'Receipt created successfully.');
+        // Handle cash flow based on payment method (cash or bank)
+        CashFlow::createInward(
+            $request->payment_method,
+            $request->amount_received,
+            'Tuition Fee',
+            'Payment received for Receipt #' . $receipt->id
+        );
+
+        return redirect()->route('admin.receipts.create')->with('success', 'Receipt created successfully and cash flow updated.');
     }
+
 
     public function getStudentByPhone($phone)
     {
