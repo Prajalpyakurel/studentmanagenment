@@ -8,7 +8,7 @@ use App\Http\Controllers\CashFlowController;
 // use App\Http\Middleware;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('website.home');
 });
 
 Auth::routes();
