@@ -81,15 +81,15 @@ class ReceiptController extends Controller
 
         // Handle cash flow based on payment method (cash or bank)
         CashFlow::createInward(
-            $request->payment_method,
-            $request->amount_received,
-            'Tuition Fee',
-            'Payment received for Receipt #' . $receipt->id
+            $request->payment_method,  // source
+            $request->amount_received, // amount
+            'Tuition Fee',             // category (optional)
+            'Payment received for Receipt #' . $receipt->id, // description (optional)
+            $request->payment_date     // date
         );
 
         return redirect()->route('admin.receipts.create')->with('success', 'Receipt created successfully and cash flow updated.');
     }
-
 
     public function getStudentByPhone($phone)
     {

@@ -11,8 +11,12 @@ class CashFlow extends Model
     ];
 
     // Method to create an inward transaction
-    public static function createInward($source, $amount, $category = null, $description = null, $date)
+    public static function createInward($source, $amount, $category = null, $description = null, $date = null)
     {
+        // If date is not provided, use the current date
+        $date = $date ?? now();
+
+        // Get the latest balance for the source
         $latestBalance = self::where('source', $source)->orderBy('date', 'desc')->first();
         $balance = $latestBalance ? $latestBalance->balance + $amount : $amount;
 
@@ -28,46 +32,16 @@ class CashFlow extends Model
     }
 
     // Method to create an outward transaction
-    public static function createOutward($source, $amount, $category = null, $description = null, $date)
+    public static function createOutward($source, $amount, $category = null, $description = null, $date = null)
     {
+        // If date is not provided, use the current date
+        $date = $date ?? now();
+
+        // Get the latest balance for the source
         $latestBalance = self::where('source', $source)->orderBy('date', 'desc')->first();
         $balance = $latestBalance ? $latestBalance->balance - $amount : -$amount;
 
         return self::create([
-            'type' => 'outward',
-            'source' => $source,
-            'amount' => $amount,
-            'balance' => $balance,
-            'category' => $category,
-            'description' => $description,
-            'date' => $date,
-        ]);
-    }
-
-    // Method to update an inward transaction
-    public function updateInward($source, $amount, $category = null, $description = null, $date)
-    {
-        $latestBalance = self::where('source', $source)->where('date', '<', $date)->orderBy('date', 'desc')->first();
-        $balance = $latestBalance ? $latestBalance->balance + $amount - $this->amount : $amount - $this->amount;
-
-        $this->update([
-            'type' => 'inward',
-            'source' => $source,
-            'amount' => $amount,
-            'balance' => $balance,
-            'category' => $category,
-            'description' => $description,
-            'date' => $date,
-        ]);
-    }
-
-    // Method to update an outward transaction
-    public function updateOutward($source, $amount, $category = null, $description = null, $date)
-    {
-        $latestBalance = self::where('source', $source)->where('date', '<', $date)->orderBy('date', 'desc')->first();
-        $balance = $latestBalance ? $latestBalance->balance - $amount + $this->amount : -$amount + $this->amount;
-
-        $this->update([
             'type' => 'outward',
             'source' => $source,
             'amount' => $amount,

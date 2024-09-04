@@ -1,22 +1,30 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ReceiptController;
 use App\Http\Controllers\CashFlowController;
-// use App\Http\Middleware;
 
 Route::get('/', function () {
     return view('website.home');
 });
 
-Auth::routes();
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-//->middleware('IsAdmin')
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-
-Route::prefix('admin')->name('admin.')->group(function () {
+require __DIR__.'/auth.php';
+Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/home', [AdmissionController::class, 'report'])->name('home');
     Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
     Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
@@ -53,5 +61,4 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 });
 
-
-
+// Route::get('admin/home', [HomeController::class, 'index'])->middleware(['auth','admin']);

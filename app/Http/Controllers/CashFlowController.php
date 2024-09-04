@@ -78,7 +78,7 @@ class CashFlowController extends Controller
         }
 
         // Redirect to the index page with a success message
-        return redirect()->route('cashflows.index')->with('success', 'Transaction recorded successfully.');
+        return redirect()->route('admin.cashflows.index')->with('success', 'Transaction recorded successfully.');
     }
 
     // Edit method: Show form to edit an existing cash flow record
