@@ -149,24 +149,53 @@
             </ul>
           </li><!-- End Forms Nav -->
 
-          {{-- <li class="nav-item">
+
+          {{-- start of website managenment  --}}
+
+
+          <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="bi bi-layout-text-window-reverse"></i><span>Website Managenment</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
-                <a href="tables-general.html">
-                  <i class="bi bi-circle"></i><span>General Tables</span>
+                <a href="{{route('admin.clients.index')}}">
+                  <i class="bi bi-circle"></i><span>Our Client</span>
                 </a>
               </li>
               <li>
-                <a href="tables-data.html">
-                  <i class="bi bi-circle"></i><span>Data Tables</span>
+                <a href="{{route('admin.testimonials.index')}}">
+                  <i class="bi bi-circle"></i><span>Testimonial</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{route('admin.logo.index')}}">
+                  <i class="bi bi-circle"></i><span>Logo</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{route('admin.trainingcategories.index')}}">
+                  <i class="bi bi-circle"></i><span>Training Courses Category</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{route('admin.trainings.index')}}">
+                  <i class="bi bi-circle"></i><span>Training Courses</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{route('admin.teams.index')}}">
+                  <i class="bi bi-circle"></i><span>Our Team</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{route('admin.services.index')}}">
+                  <i class="bi bi-circle"></i><span>Services</span>
                 </a>
               </li>
             </ul>
-          </li> --}}
-          <!-- End Tables Nav -->
+          </li>
+          {{-- end of website managenment  --}}
 
           {{-- <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
@@ -304,5 +333,8 @@
 
       <!-- Template Main JS File -->
       <script src="{{asset('admin/js/main.js')}}"></script>
+      <!-- Include your JS files here -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>
