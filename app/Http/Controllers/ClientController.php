@@ -43,6 +43,7 @@ class ClientController extends Controller
         return view('admin.clients.edit', compact('client'));
     }
 
+
     public function update(Request $request, Client $client)
     {
         $validatedData = $request->validate([
@@ -66,6 +67,7 @@ class ClientController extends Controller
 
         return redirect()->route('admin.clients.index')->with('success', 'Client updated successfully.');
     }
+
 
     public function destroy(Client $client)
     {

@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-md-4 mb-3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/12.jpeg')}}" alt="Domain Search" class="service-image">
+                    <img src="{{asset('website\img\dominreg.jpeg')}}" alt="Domain Search" class="service-image">
                     <div class="service-content">
                         <h3>Domain Search</h3>
                         <p>Effortlessly search for and discover available domain names that fit your brand.</p>
@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/9.jpeg')}}" alt="Domain Registration" class="service-image">
+                    <img src="{{asset('website\img\dominreg.jpeg')}}" alt="Domain Registration" class="service-image">
                     <div class="service-content">
                         <h3>Domain Registration</h3>
                         <p>Register your chosen domain name quickly and securely with our easy registration process.</p>
@@ -41,7 +41,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/1.jpeg')}}" alt="Domain Transfer" class="service-image">
+                    <img src="{{asset('website\img\domaintransfer.png')}}" alt="Domain Transfer" class="service-image">
                     <div class="service-content">
                         <h3>Domain Transfer</h3>
                         <p>Seamlessly transfer your existing domains to our platform for better management.</p>
@@ -50,7 +50,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/14.jpeg')}}" alt="Domain Management" class="service-image">
+                    <img src="{{asset('domain.png')}}" alt="Domain Management" class="service-image">
                     <div class="service-content">
                         <h3>Domain Management</h3>
                         <p>Manage your domains with ease, including renewals, DNS settings, and more.</p>

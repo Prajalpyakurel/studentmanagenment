@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-md-4 mb-3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/12.jpeg')}}" alt="SEO Optimization" class="service-image">
+                    <img src="{{asset('website\img\seo.png')}}" alt="SEO Optimization" class="service-image">
                     <div class="service-content">
                         <h3>SEO Optimization</h3>
                         <p>Enhance your website's visibility on search engines to attract more organic traffic.</p>
@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/9.jpeg')}}" alt="Social Media Management" class="service-image">
+                    <img src="{{asset('website\img\socialmediamgmt.jpeg')}}" alt="Social Media Management" class="service-image">
                     <div class="service-content">
                         <h3>Social Media Management</h3>
                         <p>Engage with your audience on various platforms and boost your brand's presence.</p>
@@ -41,7 +41,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/1.jpeg')}}" alt="Pay-Per-Click Advertising" class="service-image">
+                    <img src="{{asset('website\img\pay per click.jpeg')}}" alt="Pay-Per-Click Advertising" class="service-image">
                     <div class="service-content">
                         <h3>Pay-Per-Click Advertising</h3>
                         <p>Drive targeted traffic to your website through effective PPC campaigns.</p>
@@ -50,7 +50,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/14.jpeg')}}" alt="Content Marketing" class="service-image">
+                    <img src="{{asset('website\img\contentmarketing.jpeg')}}" alt="Content Marketing" class="service-image">
                     <div class="service-content">
                         <h3>Content Marketing</h3>
                         <p>Create valuable content that attracts and retains your target audience.</p>
@@ -59,7 +59,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/20.jpeg')}}" alt="Email Marketing" class="service-image">
+                    <img src="{{asset('website\img\emailmarketing.jpeg')}}" alt="Email Marketing" class="service-image">
                     <div class="service-content">
                         <h3>Email Marketing</h3>
                         <p>Build personalized email campaigns that drive engagement and conversions.</p>

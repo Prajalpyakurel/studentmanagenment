@@ -67,9 +67,9 @@ Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(func
    Route::get('/clients', [App\Http\Controllers\ClientController::class, 'index'])->name('clients.index');
    Route::get('/clients/create', [App\Http\Controllers\ClientController::class, 'create'])->name('clients.create');
    Route::post('/clients', [App\Http\Controllers\ClientController::class, 'store'])->name('clients.store');
-   Route::get('/clients/{id}/edit', [App\Http\Controllers\ClientController::class, 'edit'])->name('clients.edit');
-   Route::put('/clients/{id}', [App\Http\Controllers\ClientController::class, 'update'])->name('clients.update');
-   Route::delete('/clients/{id}', [App\Http\Controllers\ClientController::class, 'destroy'])->name('clients.destroy');
+   Route::get('admin/clients/{client}/edit', [ClientController::class, 'edit'])->name('clients.edit');
+    Route::put('admin/clients/{client}', [ClientController::class, 'update'])->name('clients.update');
+   Route::delete('/clients/{clients}', [App\Http\Controllers\ClientController::class, 'destroy'])->name('clients.destroy');
 
    // Display all testimonials
    Route::get('/testimonials', [App\Http\Controllers\TestimonialController::class, 'index'])->name('testimonials.index');
@@ -90,8 +90,8 @@ Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(func
     Route::get('/trainings', [TrainingController::class, 'index'])->name('trainings.index');
     Route::get('/trainings/create', [TrainingController::class, 'create'])->name('trainings.create');
     Route::post('/trainings', [TrainingController::class, 'store'])->name('trainings.store');
-    Route::get('/trainings/{id}/edit', [TrainingController::class, 'edit'])->name('trainings.edit');
-    Route::put('/trainings/{id}', [TrainingController::class, 'update'])->name('trainings.update');
+    Route::get('/trainings/{training}/edit', [TrainingController::class, 'edit'])->name('trainings.edit');
+    Route::put('/trainings/{training}', [TrainingController::class, 'update'])->name('trainings.update');
     Route::delete('/trainings/{id}', [TrainingController::class, 'destroy'])->name('trainings.destroy');
 
 
