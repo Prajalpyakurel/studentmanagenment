@@ -187,8 +187,7 @@
             <div class="item"> <span class="icon feature_box_col_two"><img src="{{ asset('domain.png') }}"
                         style="width: 100px;"></i></span>
                 <h6 style="font-size: 1.5rem;">Domain Regsitration</h6>
-                <p>Our digital marketing services help boost brand visibility, increase engagement, and deliver measurable
-                    results.
+                <p>Secure your online presence with easy domain registration. Choose a unique name for your website and get started in minutes!
 
                 </p>
             </div>
@@ -197,7 +196,7 @@
             <div class="item"> <span class="icon feature_box_col_two"><img src="{{ asset('troubleshooting.png') }}"
                         style="width:100px"></i></span>
                 <h6 style="font-size: 1.5rem;">Website Maintenance</h6>
-                <p>We build high-performance iOS and Android apps with seamless user experiences and custom features.
+                <p>Ensure your website runs smoothly with reliable maintenance services. From updates to security, we've got you covered!
                 </p>
             </div>
         </div>
