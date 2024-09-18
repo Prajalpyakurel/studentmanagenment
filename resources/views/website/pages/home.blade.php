@@ -10,9 +10,9 @@
                 <div class="hero-section-left">
                     <div class="hero-left-content d-flex flex-col">
                         <div class="hero-left-heading text-justify">
-                            <h1>Education,</h1>
-                            <h1>Engineering,</h1>
-                            <h1>Entertainment.</h1>
+                            <h1 style="font-size: 4rem">Education,</h1>
+                            <h1 style="font-size: 4rem">Engineering,</h1>
+                            <h1 style="font-size: 4rem">Entertainment.</h1>
                         </div>
                         {{-- <div class="hero-left-info">
                             <div class="hero-left-info-first">
@@ -29,7 +29,9 @@
                             </div>
                         </div> --}}
                         <div style="margin: 3rem 28rem 0 0;">
-                            <a href="{{asset('about')}}" class="text-decoration-none p-3 text-light fw-bold learn-more-home" style="border-radius: 8px;background-image: linear-gradient(to top, #de5fa8, #c065b4, #9e6aba, #7b6db9, #596eb1);"> Explore More</a>
+                            <a href="{{ asset('about') }}" class="text-decoration-none p-3 text-light fw-bold learn-more-home"
+                                style="border-radius: 8px;background-image: linear-gradient(to top, #de5fa8, #c065b4, #9e6aba, #7b6db9, #596eb1);">
+                                Explore More</a>
                         </div>
                     </div>
                 </div>
@@ -60,7 +62,9 @@
                     and expert IT team providing world-class solutions and support from analysis to development and from
                     testing to implementation phase.
                 </p>
-                <a href="{{asset('about')}}" class="text-decoration-none p-3 text-light fw-bold learn-more-home" style="border-radius: 8px;background-image: linear-gradient(to top, #de5fa8, #c065b4, #9e6aba, #7b6db9, #596eb1);"> Learn More</a>
+                <a href="{{ asset('about') }}" class="text-decoration-none p-3 text-light fw-bold learn-more-home"
+                    style="border-radius: 8px;background-image: linear-gradient(to top, #de5fa8, #c065b4, #9e6aba, #7b6db9, #596eb1);">
+                    Learn More</a>
             </div>
         </div>
     </div>
@@ -114,35 +118,18 @@
             <div class="card-wrapper">
                 <!-- Card slides container -->
                 <ul class="card-list swiper-wrapper">
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
+                    @foreach ($testimonials as $testimonial)
+                        <li class="card-item swiper-slide">
+                            <div class="card-link">
+                                @if($testimonial->client_photo)
+                                <img src="{{ asset('storage/'.$testimonial->client_photo) }}" alt="Client Photo" class="card-image">
+                            @endif
+                                <h3 class="d-flex justify-center mt-2" style="color: #de5fa8" >{{ $testimonial->client_name }}</h1>
+                                <h2 class="card-title" >{!! Str::words($testimonial->description, 50, ' ...') !!}</h2>
+                            </div>
+                        </li>
+                    @endforeach
 
-                            <img src="{{ asset('avatar5.jpg') }}" alt="Card Image" class="card-image">
-                            <p class="badge badge-designer"> Student</p>
-                            <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
-                        </div>
-                    </li>
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="{{ asset('avatar1.jpg') }}" alt="Card Image" class="card-image">
-                            <p class="badge badge-developer">Student</p>
-                            <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
-                        </div>
-                    </li>
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="{{ asset('avatar4.jpg') }}" alt="Card Image" class="card-image">
-                            <p class="badge badge-marketer">Student</p>
-                            <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
-                        </div>
-                    </li>
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="{{ asset('avatar5.jpg') }}" alt="Card Image" class="card-image">
-                            <p class="badge badge-marketer">Student</p>
-                            <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
-                        </div>
-                    </li>
                 </ul>
                 <!-- Pagination -->
                 <div class="swiper-pagination"></div>
@@ -276,7 +263,8 @@
                 </div>
                 <div class="working-first-inner-container working-inner-container">
                     <h1>REQUIREMENT GATHERING</h1>
-                    <p>It all starts with a great idea. Our team will get in touch with you to review your project specification in detail.</p>
+                    <p>It all starts with a great idea. Our team will get in touch with you to review your project
+                        specification in detail.</p>
                 </div>
             </div>
             <div class="working-second-container">
@@ -285,7 +273,8 @@
                 </div>
                 <div class="working-second-inner-container working-inner-container">
                     <h1>WIRE FRAMING</h1>
-                    <p>We will then produce wireframe/blueprints of the project based on your specification with regular discussion with you.</p>
+                    <p>We will then produce wireframe/blueprints of the project based on your specification with regular
+                        discussion with you.</p>
                 </div>
             </div>
             <div class="working-third-container">
@@ -294,7 +283,8 @@
                 </div>
                 <div class="working-third-inner-container working-inner-container">
                     <h1>DESIGN AND DEVELOPMENT</h1>
-                    <p>We will come up with a creative design of your choice and make changes after your review. After the designs are approved, we start actual development.</p>
+                    <p>We will come up with a creative design of your choice and make changes after your review. After the
+                        designs are approved, we start actual development.</p>
                 </div>
             </div>
             <div class="working-forth-container">
@@ -303,7 +293,8 @@
                 </div>
                 <div class="working-forth-inner-container working-inner-container">
                     <h1>TESTING</h1>
-                    <p>After development, our Quality Assurance team performs thorough testing to ensure a bug-free solution before going live.</p>
+                    <p>After development, our Quality Assurance team performs thorough testing to ensure a bug-free solution
+                        before going live.</p>
                 </div>
             </div>
             <div class="working-fifth-container">
@@ -312,7 +303,8 @@
                 </div>
                 <div class="working-fifth-inner-container working-inner-container">
                     <h1>DELIVERY OF PROJECT</h1>
-                    <p>Once the product has been validated through testing, it can be deployed to the server involving a pilot launch, maintenance, user testing, and so on.</p>
+                    <p>Once the product has been validated through testing, it can be deployed to the server involving a
+                        pilot launch, maintenance, user testing, and so on.</p>
                 </div>
             </div>
         </div>

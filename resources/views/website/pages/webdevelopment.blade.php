@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-4 mb-3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/12.jpeg')}}" alt="Custom Website Development" class="service-image">
+                    <img src="{{asset('website\img\webdesign.jpeg')}}" alt="Custom Website Development" class="service-image">
                     <div class="service-content">
                         <h3>Custom Website Development</h3>
                         <p>Tailored websites to meet your specific business goals and requirements.</p>
@@ -33,7 +33,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/9.jpeg')}}" alt="UI/UX Design" class="service-image">
+                    <img src="{{asset('uiux.jpg')}}" alt="UI/UX Design" class="service-image">
                     <div class="service-content">
                         <h3>UI/UX Design</h3>
                         <p>Intuitive designs that boost user satisfaction.</p>
@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/1.jpeg')}}" alt="E-Commerce Solutions" class="service-image">
+                    <img src="{{asset('website\img\ecommercesol.jpeg')}}" alt="E-Commerce Solutions" class="service-image">
                     <div class="service-content">
                         <h3>E-Commerce Solutions</h3>
                         <p>Build and optimize online stores for a seamless shopping experience.</p>
@@ -51,7 +51,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/14.jpeg')}}" alt="Content Management Systems" class="service-image">
+                    <img src="{{asset('website\img\cms.png')}}" alt="Content Management Systems" class="service-image">
                     <div class="service-content">
                         <h3>Content Management Systems</h3>
                         <p>Implement and customize CMS platforms for easy content management.</p>
@@ -60,7 +60,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/20.jpeg')}}" alt="Website Maintenance" class="service-image">
+                    <img src="{{asset('website\img\webmaintanance.jpg')}}" alt="Website Maintenance" class="service-image">
                     <div class="service-content">
                         <h3>Website Maintenance</h3>
                         <p>Ongoing support and updates to ensure your website remains secure and up-to-date.</p>

@@ -3,24 +3,35 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Client;
+use App\Models\Testimonial;
+use App\Models\Team;
+use App\Models\Training;
+use App\Models\TrainingCategory; // Import TrainingCategory
 
 class WebsiteController extends Controller
 {
     public function home()
     {
-        return view('website.pages.home');
+        $teams = Team::all();
+        $testimonials = Testimonial::all();
+        return view('website.pages.home',compact('testimonials','teams'));
     }
     public function aboutus()
     {
-        return view('website.pages.aboutus');
+        $teams = Team::all();
+        $testimonials = Testimonial::all();
+        return view('website.pages.aboutus',compact('testimonials','teams'));
     }
     public function services()
     {
         return view('website.pages.service');
     }
     public function courses()
+
     {
-        return view('website.pages.courses');
+        $trainings = Training::with('category')->get();
+        return view('website.pages.courses',compact('trainings'));
     }
     public function gallery()
     {
@@ -32,7 +43,9 @@ class WebsiteController extends Controller
     }
     public function clients()
     {
-        return view('website.pages.clients');
+
+        $clients = Client::all();
+        return view('website.pages.clients',compact('clients'));
     }
     public function blogs()
     {

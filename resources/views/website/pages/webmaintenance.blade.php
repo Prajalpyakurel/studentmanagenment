@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-4 mb-3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/maintenance-1.jpeg')}}" alt="Site Updates" class="service-image">
+                    <img src="{{asset('troubleshooting.png')}}" alt="Site Updates" class="service-image">
                     <div class="service-content">
                         <h3>Regular Site Updates</h3>
                         <p>Keep your website current with the latest updates and enhancements to ensure optimal performance and security.</p>

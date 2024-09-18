@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-md-4 mb-3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/12.jpeg')}}" alt="Custom Web Design" class="service-image">
+                    <img src="{{asset('website\img\webdesign.jpeg')}}" alt="Custom Web Design" class="service-image">
                     <div class="service-content">
                         <h3>Custom Web Design</h3>
                         <p>Unique and tailored designs that align with your brand's vision and objectives.</p>
@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/9.jpeg')}}" alt="Responsive Design" class="service-image">
+                    <img src="{{asset('website\img\webdesign.jpeg')}}" alt="Responsive Design" class="service-image">
                     <div class="service-content">
                         <h3>Responsive Design</h3>
                         <p>Ensuring your website looks great and functions perfectly on all devices and screen sizes.</p>
@@ -41,7 +41,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/1.jpeg')}}" alt="UI/UX Design" class="service-image">
+                    <img src="{{asset('website\img\uiux.jpeg')}}" alt="UI/UX Design" class="service-image">
                     <div class="service-content">
                         <h3>UI/UX Design</h3>
                         <p>Creating user-centric designs that enhance usability and user satisfaction.</p>
@@ -50,7 +50,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/14.jpeg')}}" alt="Brand Identity Design" class="service-image">
+                    <img src="{{asset('website\img\brandidentity.jpg')}}" alt="Brand Identity Design" class="service-image">
                     <div class="service-content">
                         <h3>Brand Identity Design</h3>
                         <p>Designing logos and visual elements that strengthen your brand's identity.</p>
@@ -59,7 +59,7 @@
             </div>
             <div class="col-md-4" style="margin-bottom:3rem;">
                 <div class="service-card">
-                    <img src="{{asset('Test-image/20.jpeg')}}" alt="Website Redesign" class="service-image">
+                    <img src="{{asset('website\img\webdesign.jpeg')}}" alt="Website Redesign" class="service-image">
                     <div class="service-content">
                         <h3>Website Redesign</h3>
                         <p>Refreshing and updating existing websites to improve aesthetics and functionality.</p>

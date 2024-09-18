@@ -131,28 +131,20 @@
                     <!-- Team members go here -->
                     <div class="team-members" id="teamMembers">
                         <!-- Team members go here -->
-                        <div class="team-member">John Doe - Web Developer</div>
-                        <div class="team-member">Jane Smith - UI/UX Designer</div>
-                        <div class="team-member">Alice Johnson - Frontend Developer</div>
-                        <div class="team-member">Bob Williams - Backend Developer</div>
-                        <div class="team-member">Eva Davis - Graphic Designer</div>
-                        <div class="team-member">Michael Brown - Project Manager</div>
-                        <div class="team-member">Olivia Garcia - QA Engineer</div>
-                        <div class="team-member">David Taylor - Mobile App Developer</div>
-                        <div class="team-member">Sophia Clark - Marketing Specialist</div>
-                        <div class="team-member">Daniel Turner - Data Analyst</div>
+                        @foreach($teams as $team)
+                        <div class="team-member">{{ $team->name }} - {{ $team->designation }}</div>
+                        @endforeach
                     </div>
             </div>
         </div>
     </div>
                 {{--end of our team --}}
                 <!--    End Our Story Section-->
-{{-- start of testimonial --}}
-
-<section class="overflow-hidden" style="margin-top: 3rem;">
+{{-- Testimonial section --}}
+<section class="overflow-hidden">
     <div class="row d-flex justify-content-center">
         <div class="col-md-10 col-xl-8 text-center">
-            <h3 class="mb-4 text-danger">Our Students testimonials</h3>
+            <h1 class="mb-4 text-danger">Our Students testimonials</h1>
             <p class="mb-4 pb-2 mb-md-5 pb-md-0">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
                 numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum
@@ -161,39 +153,22 @@
         </div>
     </div>
 
-    <div class="container swiper" style="overflow: hidden;">
+    <div class="container swiper">
         <div class="card-wrapper">
             <!-- Card slides container -->
             <ul class="card-list swiper-wrapper">
-                <li class="card-item swiper-slide">
-                    <div class="card-link">
+                @foreach ($testimonials as $testimonial)
+                    <li class="card-item swiper-slide">
+                        <div class="card-link">
+                            @if($testimonial->client_photo)
+                            <img src="{{ asset('storage/'.$testimonial->client_photo) }}" alt="Client Photo" class="card-image">
+                        @endif
+                            <h3 class="d-flex justify-center mt-2" style="color: #de5fa8" >{{ $testimonial->client_name }}</h1>
+                            <h2 class="card-title" >{!! Str::words($testimonial->description, 50, ' ...') !!}</h2>
+                        </div>
+                    </li>
+                @endforeach
 
-                        <img src="{{asset('avatar5.jpg')}}" alt="Card Image" class="card-image">
-                        <p class="badge badge-designer"> Student</p>
-                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
-                    </div>
-                </li>
-                <li class="card-item swiper-slide">
-                    <div class="card-link">
-                        <img src="{{asset('avatar1.jpg')}}" alt="Card Image" class="card-image">
-                        <p class="badge badge-developer">Student</p>
-                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
-                    </div>
-                </li>
-                <li class="card-item swiper-slide">
-                    <div class="card-link">
-                        <img src="{{asset('avatar4.jpg')}}" alt="Card Image" class="card-image">
-                        <p class="badge badge-marketer">Student</p>
-                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
-                    </div>
-                </li>
-                <li class="card-item swiper-slide">
-                    <div class="card-link">
-                        <img src="{{asset('avatar5.jpg')}}" alt="Card Image" class="card-image">
-                        <p class="badge badge-marketer">Student</p>
-                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
-                    </div>
-                </li>
             </ul>
             <!-- Pagination -->
             <div class="swiper-pagination"></div>
