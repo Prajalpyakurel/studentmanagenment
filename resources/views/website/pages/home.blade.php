@@ -147,7 +147,7 @@
             <div class="item"> <span class="icon feature_box_col_one"><img src="{{ asset('webo.png') }}"
                         style="width: 100px;"><i></span>
                 <h6 style="font-size: 1.5rem; font-style:normal;">Web Development</h6>
-                <p style="font-style: normal;">We build responsive, user-friendly websites to enhance your online presence
+                <p style="font-style: normal;">We build responsive, user-friendly web Application to enhance your online presence
                     and drive business growth.
 
                 </p>

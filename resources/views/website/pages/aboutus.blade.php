@@ -144,11 +144,9 @@
 <section class="overflow-hidden">
     <div class="row d-flex justify-content-center">
         <div class="col-md-10 col-xl-8 text-center">
-            <h1 class="mb-4 text-danger">Our Students testimonials</h1>
+            <h1 class="mb-4 text-danger">Our Students Speak: Real Experiences, Real Success Stories</h1>
             <p class="mb-4 pb-2 mb-md-5 pb-md-0">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
-                numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum
-                quisquam eum porro a pariatur veniam.
+
             </p>
         </div>
     </div>
