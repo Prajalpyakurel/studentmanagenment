@@ -70,7 +70,7 @@
 
         <div class="row">
             @foreach ($trainings as $training)
-            <div class="col-md-4 col-sm-6 mb-4">
+            <div class="col-md-3 col-sm-6 mb-4">
                 <div class="card all-courses servcies" style="width:100%; height:30rem;">
                     @if($training->training_photo)
                     <img src="{{ asset('storage/' . $training->training_photo) }}" alt="{{ $training->training_name }}" width="200px" class="card-img-top">
