@@ -25,7 +25,7 @@
                                 <div class="thumb-info-wrapper position-relative">
                                     @if ($client->logo)
                                         <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name }}"
-                                            style="width:500px; height:300px;" class="img-fluid">
+                                            style="width:500px; height:324px;" class="img-fluid">
                                     @else
                                         No logo
                                     @endif

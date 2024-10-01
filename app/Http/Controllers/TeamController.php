@@ -10,6 +10,7 @@ class TeamController extends Controller
     // Display the list of teams
     public function index()
     {
+
         $teams = Team::all();
         return view('admin.teams.index', compact('teams'));
     }
