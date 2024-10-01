@@ -68,7 +68,7 @@
     <!-- Featured Courses Section -->
     {{-- For Experts Section --}}
 
-        <div class="row">
+        <div class="row" style="justify-content:center;padding:0 2rem;">
             @foreach ($trainings as $training)
             <div class="col-md-3 col-sm-6 mb-4">
                 <div class="card all-courses servcies" style="width:100%; height:30rem;">
