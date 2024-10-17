@@ -10,10 +10,11 @@
                 <div class="hero-section-left">
                     <div class="hero-left-content d-flex flex-col">
                         <div class="hero-left-heading text-justify">
-                            <h1 style="font-size: 4rem">Education,</h1>
-                            <h1 style="font-size: 4rem">Engineering,</h1>
-                            <h1 style="font-size: 4rem">Entertainment.</h1>
+                            <h1 style="font-size: 4rem"><span style="color: #de5fa8">E</span>ducation,</h1>
+                            <h1 style="font-size: 4rem"><span style="color: #de5fa8">E</span>ngineering,</h1>
+                            <h1 style="font-size: 4rem"><span style="color: #de5fa8">E</span>ntertainment.</h1>
                         </div>
+                        <h1 style="font-size:1.4rem;">"A Complete IT solutions & Computer Training Center."</h1>
                         {{-- <div class="hero-left-info">
                             <div class="hero-left-info-first">
                                 <p>Let us be the <span class="first-span"> answer</span></p>
@@ -43,13 +44,19 @@
     </div>
     <!--    End Hero Section-->
     <!--    Our Story Section-->
+
+    <div class="header-container d-flex justify-content-between align-items-center" style="padding: 0 2.8rem;">
+        <h2 class="fw-bold fs-1 underline-heading text-danger mt-3">Our Story</h2>
+    </div>
     <div class="our-story-section">
+
+
         <div class="our-story-left">
             <img src="{{ asset('our-story.png') }}" alt="" height="auto" width="450">
         </div>
         <div class="our-story-right">
             <div class="our-story-content">
-                <h1>Our Story</h1>
+
                 <p>EEE Innovation Ghar Pvt. Ltd was established in 12 February, 2019 to provide appropriate and advanced
                     technical solutions in the field of Engineering, Education, and Entertainment. We also aim to
                     provide good IT services in the global market by utilizing the best-skilled manpower of Nepal.
@@ -68,41 +75,170 @@
             </div>
         </div>
     </div>
-    <!--    End Our Story Section-->
+
+
+    <section>
+        <div class="header-container d-flex justify-content-between align-items-center" style="padding: 0 2.8rem;">
+            <h2 class="fw-bold fs-1 underline-heading text-danger">Our Services</h2>
+        </div>
+        <section class="d-flex px-4">
+            <div class="col-lg-4 col-sm-6">
+                <div class="item"> <span class="icon feature_box_col_one"><img src="{{ asset('webo.png') }}"
+                            style="width:52px; margin: 21px;"><i></span>
+                    <h6 style="font-size: 1.5rem; font-style:normal;">Web Development</h6>
+                    <p style="font-style: normal;">We build responsive, user-friendly web Application to enhance your online presence
+                        and drive business growth.
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="item"> <span class="icon feature_box_col_two"><img src="{{ asset('digit.png') }}"
+                            style="width:52px; margin: 21px;"></i></span>
+                    <h6 style="font-size: 1.5rem;">Digital Marketing</h6>
+                    <p>Our digital marketing services help boost brand visibility, increase engagement, and deliver measurable
+                        results.
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="item"> <span class="icon feature_box_col_three"><img src="{{ asset('wewe.png') }}"
+                            style="width:52px; margin: 21px;"></i></span>
+                    <h6 style="font-size: 1.5rem;">App Development</h6>
+                    <p>We build high-performance iOS and Android apps with seamless user experiences and custom features.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="d-flex px-4">
+            <div class="col-lg-4 col-sm-6">
+                <div class="item"> <span class="icon feature_box_col_four"><img src="{{ asset('web-design.png') }}"
+                            style="width:52px; margin: 21px;"><i></span>
+                    <h6 style="font-size: 1.5rem; font-style:normal;">Web Design</h6>
+                    <p style="font-style: normal;">We build responsive, user-friendly websites to enhance your online presence
+                        and drive business growth.
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="item"> <span class="icon feature_box_col_five"><img src="{{ asset('domain.png') }}"
+                            style="width:52px; margin: 21px;"></i></span>
+                    <h6 style="font-size: 1.5rem;">Domain Regsitration</h6>
+                    <p>Secure your online presence with easy domain registration. Choose a unique name for your website and get started in minutes!
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="item"> <span class="icon feature_box_col_six"><img src="{{ asset('troubleshooting.png') }}"
+                            style="width:52px; margin: 21px;"></i></span>
+                    <h6 style="font-size: 1.5rem;">Website Maintenance</h6>
+                    <p>Ensure your website runs smoothly with reliable maintenance services. From updates to security, we've got you covered!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </section>
+      <!--   our course section-->
+      <div class="header-container d-flex justify-content-between align-items-center px-3">
+        <h2 class="fw-bold fs-1 underline-heading text-danger">Our Courses</h2>
+        <a href="{{ route('courses') }}" class="view-all-link">View All Courses<i class="fa-solid fa-angles-right"></i></a>
+    </div>
+    <div class="row" style="justify-content:center;padding:0 2rem;">
+        @foreach ($trainings as $training)
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card all-courses servcies" style="width:100%; height:30rem;">
+                @if($training->training_photo)
+                <img src="{{ asset('storage/' . $training->training_photo) }}" alt="{{ $training->training_name }}" width="200px" class="card-img-top">
+            @else
+                No Photo
+            @endif
+                <div class="card-body d-flex flex-col gap-4">
+                    <h5 class="card-title">{{ $training->training_name }}</h5>
+                    <h6 class="">Duration:{{ $training->training_duration }}</h5>
+                    {{-- <pre class="card-title">Duration:{{ $training->training_description }}</pre> --}}
+                    @if($training->syllabus_pdf)
+            <p class="">Current Syllabus: <a href="{{ asset('storage/' . $training->syllabus_pdf) }}" target="_blank">View PDF</a></p>
+        @endif
+
+                    <a href="#" class="btn courses-view" style="background-color:#DC58A4; font-weight:500;">View More</a>
+                </div>
+            </div>
+        </div>
+        @endforeach
+
+    </div>
+
+
+    <!--    End What We Do Section-->
     <!--Why Choose Us-->
     <section class="course-categories">
-        <h2 class="text-danger text-center eeein">Why EEE Innovation Ghar ?? </h2>
+        <h2 class="text-danger text-center">Why Choose EEE?</h2>
         <div class="category-grid">
             <div class="category-card">
-                <i class="fa-solid fa-graduation-cap text-dark"></i>
-                <h3 class="text-danger">Expert Instructors</h3>
-                <p style="font-size: 1.3rem;">Learn from industry professionals with years of experiences</p>
+                <i class="fa-solid fa-code text-dark"></i>
+                <h3 class="text-danger">Expert Web & App Development</h3>
+                <p style="font-size: 1.2rem;">We deliver high-quality, custom websites and applications that drive results and engage users seamlessly.</p>
+            </div>
+
+            <div class="category-card">
+                <i class="fa-solid fa-chart-line text-dark"></i>
+                <h3 class="text-danger">Effective Digital Marketing</h3>
+                <p style="font-size: 1.2rem;">Boost your brand’s online presence with our data-driven SEO, social media, and PPC marketing strategies.</p>
+            </div>
+
+            <div class="category-card">
+                <i class="fa-solid fa-lightbulb text-dark"></i>
+                <h3 class="text-danger">Innovative Solutions</h3>
+                <p style="font-size: 1.2rem;">We stay ahead of tech trends to bring you innovative solutions that keep you competitive in a fast-paced industry.</p>
+            </div>
+
+            <div class="category-card">
+                <i class="fa-solid fa-users text-dark"></i>
+                <h3 class="text-danger">Dedicated Team</h3>
+                <p style="font-size: 1.2rem;">Our passionate team is committed to helping your business thrive with tailored support every step of the way.</p>
+            </div>
+
+            <div class="category-card">
+                <i class="fa-solid fa-cogs text-dark"></i>
+                <h3 class="text-danger">Comprehensive Solutions</h3>
+                <p style="font-size: 1.2rem;">From development to marketing, we offer end-to-end IT solutions to scale your business efficiently.</p>
+            </div>
+
+            <div class="category-card">
+                <i class="fa-solid fa-trophy text-dark"></i>
+                <h3 class="text-danger">Proven Results</h3>
+                <p style="font-size: 1.2rem;">With a track record of successful projects and satisfied clients, our results speak for themselves.</p>
             </div>
             <div class="category-card">
-                <i class="fa-solid fa-gear text-dark"></i>
-                <h3 class="text-danger">Hands-on Projects</h3>
-                <p style="font-size: 1.3rem;">Apply your skills to real-work projects and build your portfolio</p>
+                <i class="fa-solid fa-laptop-code text-dark"></i>
+                <h3 class="text-danger">Expert IT Mentors</h3>
+                <p style="font-size: 1.3rem;">Learn directly from seasoned IT experts with in-depth industry experience.</p>
             </div>
             <div class="category-card">
-                <i class="fa-regular fa-handshake text-dark"></i>
-                <h3 class="text-danger">Supportive Community</h3>
-                <p style="font-size: 1.3rem;">Connect With fellow learners and grow together</p>
+                <i class="fa-solid fa-tools text-dark"></i>
+                <h3 class="text-danger">Practical Training</h3>
+                <p style="font-size: 1.3rem;">Work on real-world projects that prepare you for current IT challenges.</p>
             </div>
             <div class="category-card">
-                <i class="fa-regular fa-file text-dark"></i>
-                <h3 class="text-danger">Industry-Recognized Certifiates</h3>
-                <p style="font-size: 1.3rem;">Earn certificates that boost your career prospecst</p>
+                <i class="fa-regular fa-users text-dark"></i>
+                <h3 class="text-danger">Collaborative Community</h3>
+                <p style="font-size: 1.3rem;">Engage with peers and mentors in a thriving tech community.</p>
+            </div>
+            <div class="category-card">
+                <i class="fa-solid fa-certificate text-dark"></i>
+                <h3 class="text-danger">Certified Courses</h3>
+                <p style="font-size: 1.3rem;">Gain certifications that enhance your skills and career prospects.</p>
             </div>
         </div>
     </section>
 
-    <!--    What We Do Section-->
-    <div class="header-container d-flex justify-content-between align-items-center px-3">
-        <h2 class="fw-bold fs-1 underline-heading text-danger">Our Courses</h2>
-        <a href="{{ route('courses') }}" class="view-all-link">View All Courses<i class="fa-solid fa-angles-right"></i></a>
-    </div>
 
-    <!--    End What We Do Section-->
+
+
+
     {{-- Testimonial section --}}
     <section class="overflow-hidden">
         <div class="row d-flex justify-content-center">
@@ -114,16 +250,18 @@
             </div>
         </div>
 
-        <div class="container swiper">
+        <div class="swiper ">
             <div class="card-wrapper">
                 <!-- Card slides container -->
                 <ul class="card-list swiper-wrapper">
                     @foreach ($testimonials as $testimonial)
                         <li class="card-item swiper-slide">
-                            <div class="card-link">
+                            <div class="card-link " style="">
+                                <div class="d-flex">
                                 @if($testimonial->client_photo)
-                                <img src="{{ asset('storage/'.$testimonial->client_photo) }}" alt="Client Photo" class="card-image">
+                                <img src="{{ asset('storage/'.$testimonial->client_photo) }}" alt="Client Photo" class="card-image" style="width: 100px;height:100px;">
                             @endif
+                        </div>
                                 <h3 class="d-flex justify-center mt-2" style="color: #de5fa8" >{{ $testimonial->client_name }}</h1>
                                 <h2 class="card-title" >{!! Str::words($testimonial->description, 50, ' ...') !!}</h2>
                             </div>
@@ -139,71 +277,18 @@
             </div>
         </div>
     </section>
-    <div class="header-container d-flex justify-content-between align-items-center" style="padding: 0 2.8rem;">
-        <h2 class="fw-bold fs-1 underline-heading text-danger">Our Services</h2>
-    </div>
-    <section class="d-flex px-4">
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_one"><img src="{{ asset('webo.png') }}"
-                        style="width: 100px;"><i></span>
-                <h6 style="font-size: 1.5rem; font-style:normal;">Web Development</h6>
-                <p style="font-style: normal;">We build responsive, user-friendly web Application to enhance your online presence
-                    and drive business growth.
 
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_two"><img src="{{ asset('digit.png') }}"
-                        style="width: 100px;"></i></span>
-                <h6 style="font-size: 1.5rem;">Digital Marketing</h6>
-                <p>Our digital marketing services help boost brand visibility, increase engagement, and deliver measurable
-                    results.
 
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_two"><img src="{{ asset('wewe.png') }}"
-                        style="width:100px"></i></span>
-                <h6 style="font-size: 1.5rem;">App Development</h6>
-                <p>We build high-performance iOS and Android apps with seamless user experiences and custom features.
-                </p>
-            </div>
-        </div>
-    </section>
-    <section class="d-flex px-4">
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_one"><img src="{{ asset('web-design.png') }}"
-                        style="width: 100px;"><i></span>
-                <h6 style="font-size: 1.5rem; font-style:normal;">Web Design</h6>
-                <p style="font-style: normal;">We build responsive, user-friendly websites to enhance your online presence
-                    and drive business growth.
 
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_two"><img src="{{ asset('domain.png') }}"
-                        style="width: 100px;"></i></span>
-                <h6 style="font-size: 1.5rem;">Domain Regsitration</h6>
-                <p>Secure your online presence with easy domain registration. Choose a unique name for your website and get started in minutes!
+      {{-- end of Testimonial section --}}
 
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-            <div class="item"> <span class="icon feature_box_col_two"><img src="{{ asset('troubleshooting.png') }}"
-                        style="width:100px"></i></span>
-                <h6 style="font-size: 1.5rem;">Website Maintenance</h6>
-                <p>Ensure your website runs smoothly with reliable maintenance services. From updates to security, we've got you covered!
-                </p>
-            </div>
-        </div>
-    </section>
 
-    {{-- end of Testimonial section --}}
-    <!--   Our Achievements -->
+
+
+
+
+
+      <!--   Our Achievements -->
     <div class="container-fluid py-5 our-achievements-section">
         <div class="text-center what-we-do-heading mb-5">
             <h1 class="text-danger">Our Achievements</h1>
@@ -245,6 +330,7 @@
                     <span class="text">Experts</span>
                 </div>
             </div>
+
         </div>
     </div>
 

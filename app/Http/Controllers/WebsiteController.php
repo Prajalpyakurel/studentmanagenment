@@ -13,9 +13,10 @@ class WebsiteController extends Controller
 {
     public function home()
     {
+        $trainings = Training::all();
         $teams = Team::all();
         $testimonials = Testimonial::all();
-        return view('website.pages.home',compact('testimonials','teams'));
+        return view('website.pages.home',compact('testimonials','teams','trainings'));
     }
     public function aboutus()
     {
