@@ -1,7 +1,7 @@
 <nav style="position: sticky; top:0; z-index:999; background:none; width:100%;">
     <div class="nav-bar">
         <li class="logo">
-            <a href="index.html">
+            <a href="{{route('home')}}">
                 <img src="{{asset('logo.png')}}" class="w-[40px]" />
             </a>
         </li>

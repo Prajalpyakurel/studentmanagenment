@@ -59,7 +59,7 @@
                     <h6 class="text-uppercase fw-bold mb-4">
                         <a href="#" class="text-dark" style="text-decoration: none"><img src="{{asset('logo.png')}}" width="50px" alt="EEE Innovation Ghar Logo">EEE Innovation Ghar</a>
                     </h6>
-                    <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p class=" para">Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
 
                 <!-- Grid column: Products -->
@@ -98,7 +98,7 @@
                 <!-- Grid column: Email Subscription -->
                 <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
                     <h6 class="text-uppercase fw-bold mb-4">Subscribe to our newsletter</h6>
-                    <div class="input-group">
+                    <div class="input-group p-2">
                         <input type="email" id="form5Example22" class="form-control" placeholder="Enter your email" aria-label="Email">
                         <button type="button" class="btn newsletter" style="color:black; background-image: radial-gradient(circle, #d53e94, #b646a2, #924ea9, #6b53a9, #4055a3);font-weight:500;">Subscribe</button>
                     </div>

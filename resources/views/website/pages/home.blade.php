@@ -10,11 +10,11 @@
                 <div class="hero-section-left">
                     <div class="hero-left-content d-flex flex-col">
                         <div class="hero-left-heading text-justify">
-                            <h1 style="font-size: 4rem"><span style="color: #de5fa8">E</span>ducation,</h1>
-                            <h1 style="font-size: 4rem"><span style="color: #de5fa8">E</span>ngineering,</h1>
-                            <h1 style="font-size: 4rem"><span style="color: #de5fa8">E</span>ntertainment.</h1>
+                            <h1 style="color: #3A53A7;font-weight:600;"><span style="color: #de5fa8">E</span>ducation,</h1>
+                            <h1 style="color: #3A53A7;font-weight:600;"><span style="color: #de5fa8">E</span>ngineering,</h1>
+                            <h1 style="color: #3A53A7;font-weight:600;"><span style="color: #de5fa8">E</span>ntertainment.</h1>
                         </div>
-                        <h1 style="font-size:1.4rem;">"A Complete IT solutions & Computer Training Center."</h1>
+                        <h1 class="tagger">"A Complete IT solutions & Computer Training Center."</h1>
                         {{-- <div class="hero-left-info">
                             <div class="hero-left-info-first">
                                 <p>Let us be the <span class="first-span"> answer</span></p>
@@ -29,8 +29,8 @@
                                 <p>to your learning <span class="second-span"> Harry Potter</span></p>
                             </div>
                         </div> --}}
-                        <div style="margin: 3rem 28rem 0 0;">
-                            <a href="{{ asset('about') }}" class="text-decoration-none p-3 text-light fw-bold learn-more-home"
+                        <div>
+                            <a href="{{ route('aboutus') }}" class="text-decoration-none p-3 text-light fw-bold learn-more-home"
                                 style="border-radius: 8px;background-image: linear-gradient(to top, #de5fa8, #c065b4, #9e6aba, #7b6db9, #596eb1);">
                                 Explore More</a>
                         </div>
@@ -42,105 +42,138 @@
             </div>
         </div>
     </div>
+
     <!--    End Hero Section-->
     <!--    Our Story Section-->
 
     <div class="header-container d-flex justify-content-between align-items-center" style="padding: 0 2.8rem;">
         <h2 class="fw-bold fs-1 underline-heading text-danger mt-3">Our Story</h2>
     </div>
-    <div class="our-story-section">
+    <div class=" container py-5">
+        <div class="row align-items-center">
+            <!-- Left Image Section -->
+            <div class="our-story-left col-lg-6 col-md-12 text-center text-lg-start mb-4 mb-lg-0">
+                <img src="{{ asset('our-story.png') }}" alt="Our Story" class="img-fluid" style="max-width: 100%; height: auto;">
+            </div>
 
-
-        <div class="our-story-left">
-            <img src="{{ asset('our-story.png') }}" alt="" height="auto" width="450">
-        </div>
-        <div class="our-story-right">
-            <div class="our-story-content">
-
-                <p>EEE Innovation Ghar Pvt. Ltd was established in 12 February, 2019 to provide appropriate and advanced
-                    technical solutions in the field of Engineering, Education, and Entertainment. We also aim to
-                    provide good IT services in the global market by utilizing the best-skilled manpower of Nepal.
-                    <br><br>
-                    Our motto is to be the best outsourcing company on the local and global market by trading
-                    technologies. EEE Innovation Ghar Pvt Ltd is tied up with a Japanese Tech company named "B-icon.
-                    Inc" from the beginning and also provides various IT solutions to them. In near future we will
-                    diversify our domain and will be a leading conglomerate in Nepal, We will develop the best
-                    technology through innovation and apply them in every possible domain. We have a highly dedicated
-                    and expert IT team providing world-class solutions and support from analysis to development and from
-                    testing to implementation phase.
-                </p>
-                <a href="{{ asset('about') }}" class="text-decoration-none p-3 text-light fw-bold learn-more-home"
-                    style="border-radius: 8px;background-image: linear-gradient(to top, #de5fa8, #c065b4, #9e6aba, #7b6db9, #596eb1);">
-                    Learn More</a>
+            <!-- Right Content Section -->
+            <div class="our-story-right col-lg-6 col-md-12">
+                <div class="our-story-content">
+                    <p class="text-justify">
+                        EEE Innovation Ghar Pvt. Ltd was established on 12 February, 2019 to provide appropriate and advanced
+                        technical solutions in the fields of Engineering, Education, and Entertainment. We also aim to
+                        provide top IT services in the global market by utilizing the best-skilled manpower in Nepal.
+                        <br><br>
+                        Our motto is to be the best outsourcing company locally and globally by trading
+                        technologies. EEE Innovation Ghar Pvt. Ltd is partnered with a Japanese tech company named "B-icon.
+                        Inc" from the beginning and provides various IT solutions to them. In the near future, we aim to
+                        diversify and become a leading conglomerate in Nepal, developing innovative technologies and applying
+                        them across diverse domains. Our highly dedicated and expert IT team provides world-class solutions and
+                        support from analysis and development to testing and implementation phases.
+                    </p>
+                    <a href="{{ route('aboutus') }}" class="text-decoration-none p-3 text-light fw-bold learn-more-home"
+                        style="border-radius: 8px; background-image: linear-gradient(to top, #de5fa8, #c065b4, #9e6aba, #7b6db9, #596eb1);">
+                        Learn More
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- Custom CSS -->
+    <style>
+        .our-story-section p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        /* Additional styling for mobile view */
+        @media (max-width: 767px) {
+            .our-story-section {
+                text-align: center;
+            }
+            .our-story-right p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 
-    <section>
-        <div class="header-container d-flex justify-content-between align-items-center" style="padding: 0 2.8rem;">
+
+
+    <section class="px-4">
+        <div class="header-container d-flex justify-content-between align-items-center mb-4" style="padding: 0 2.8rem;">
             <h2 class="fw-bold fs-1 underline-heading text-danger">Our Services</h2>
         </div>
-        <section class="d-flex px-4">
-            <div class="col-lg-4 col-sm-6">
-                <div class="item"> <span class="icon feature_box_col_one"><img src="{{ asset('webo.png') }}"
-                            style="width:52px; margin: 21px;"><i></span>
-                    <h6 style="font-size: 1.5rem; font-style:normal;">Web Development</h6>
-                    <p style="font-style: normal;">We build responsive, user-friendly web Application to enhance your online presence
-                        and drive business growth.
 
-                    </p>
+        <div class="row">
+            <!-- Web Development Service -->
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_one">
+                        <img src="{{ asset('webo.png') }}" style="width:52px; margin: 21px;">
+                    </span>
+                    <h6 style="font-size: 1.5rem;">Web Development</h6>
+                    <p>We build responsive, user-friendly web applications to enhance your online presence and drive business growth.</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="item"> <span class="icon feature_box_col_two"><img src="{{ asset('digit.png') }}"
-                            style="width:52px; margin: 21px;"></i></span>
+
+            <!-- Digital Marketing Service -->
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_two">
+                        <img src="{{ asset('digit.png') }}" style="width:52px; margin: 21px;">
+                    </span>
                     <h6 style="font-size: 1.5rem;">Digital Marketing</h6>
-                    <p>Our digital marketing services help boost brand visibility, increase engagement, and deliver measurable
-                        results.
-
-                    </p>
+                    <p>Our digital marketing services help boost brand visibility, increase engagement, and deliver measurable results.</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="item"> <span class="icon feature_box_col_three"><img src="{{ asset('wewe.png') }}"
-                            style="width:52px; margin: 21px;"></i></span>
+
+            <!-- App Development Service -->
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_three">
+                        <img src="{{ asset('wewe.png') }}" style="width:52px; margin: 21px;">
+                    </span>
                     <h6 style="font-size: 1.5rem;">App Development</h6>
-                    <p>We build high-performance iOS and Android apps with seamless user experiences and custom features.
-                    </p>
+                    <p>We build high-performance iOS and Android apps with seamless user experiences and custom features.</p>
                 </div>
             </div>
-        </section>
-        <section class="d-flex px-4">
-            <div class="col-lg-4 col-sm-6">
-                <div class="item"> <span class="icon feature_box_col_four"><img src="{{ asset('web-design.png') }}"
-                            style="width:52px; margin: 21px;"><i></span>
-                    <h6 style="font-size: 1.5rem; font-style:normal;">Web Design</h6>
-                    <p style="font-style: normal;">We build responsive, user-friendly websites to enhance your online presence
-                        and drive business growth.
 
-                    </p>
+            <!-- Web Design Service -->
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_four">
+                        <img src="{{ asset('web-design.png') }}" style="width:52px; margin: 21px;">
+                    </span>
+                    <h6 style="font-size: 1.5rem;">Web Design</h6>
+                    <p>We build responsive, user-friendly websites to enhance your online presence and drive business growth.</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="item"> <span class="icon feature_box_col_five"><img src="{{ asset('domain.png') }}"
-                            style="width:52px; margin: 21px;"></i></span>
-                    <h6 style="font-size: 1.5rem;">Domain Regsitration</h6>
-                    <p>Secure your online presence with easy domain registration. Choose a unique name for your website and get started in minutes!
 
-                    </p>
+            <!-- Domain Registration Service -->
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_five">
+                        <img src="{{ asset('domain.png') }}" style="width:52px; margin: 21px;">
+                    </span>
+                    <h6 style="font-size: 1.5rem;">Domain Registration</h6>
+                    <p>Secure your online presence with easy domain registration. Choose a unique name for your website and get started in minutes!</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="item"> <span class="icon feature_box_col_six"><img src="{{ asset('troubleshooting.png') }}"
-                            style="width:52px; margin: 21px;"></i></span>
+
+            <!-- Website Maintenance Service -->
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_six">
+                        <img src="{{ asset('troubleshooting.png') }}" style="width:52px; margin: 21px;">
+                    </span>
                     <h6 style="font-size: 1.5rem;">Website Maintenance</h6>
-                    <p>Ensure your website runs smoothly with reliable maintenance services. From updates to security, we've got you covered!
-                    </p>
+                    <p>Ensure your website runs smoothly with reliable maintenance services. From updates to security, we've got you covered!</p>
                 </div>
             </div>
-        </section>
+        </div>
     </section>
+
+
       <!--   our course section-->
       <div class="header-container d-flex justify-content-between align-items-center px-3">
         <h2 class="fw-bold fs-1 underline-heading text-danger">Our Courses</h2>

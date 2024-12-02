@@ -1,104 +1,109 @@
 @extends('website.layouts.master')
 
 @section('content')
-    <div style="">
-    <div class="top_banner">
-        <img src="{{asset('background.jpg')}}"  alt="" width="100%">
-        <div class="centered">
-            <h1 style="font-size: 60px; font-weight:800;">About Us</h1>
-            <p>Home > About Us</p>
-        </div>
-
+<div class="top_banner position-relative" style="height: 7rem;">
+    <img src="{{ asset('background.jpg') }}" alt="Banner Image" class="w-100">
+    <div class="centered position-absolute text-center text-light" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <h1 class="fw-bold display-5 display-md-4 display-lg-3 m-2">About Us</h1>
+        <p class="fs-5">Home > About Us</p>
     </div>
-    <!--    Our Story Section-->
-    <div class="our-story-section" style=" background-color: var(--soft-white);">
-        <div class="our-story-left  mt-3 loading_for_left">
-            <div class="our-story-content text-justify">
-{{--                <h1>Our Story</h1>--}}
-                <h1>Welcome to EEE Innovation Ghar </h1>
-                <p class="text-justify">Established on February 12, 2019, EEE Innovation Ghar Pvt. Ltd stands as a beacon of technological advancement in Nepal. Our mission is to deliver cutting-edge solutions in Engineering, Education, and Entertainment while providing exceptional IT services to the global market, leveraging the unparalleled talent of Nepal.
-                    <br><br>
-                    Our motto is to be the best outsourcing company on the local and global market by trading
-                    technologies. EEE Innovation Ghar Pvt Ltd is tied up with a Japanese Tech company named "B-icon.
-                    Inc" from the beginning and also provides various IT solutions to them. In near future we will
-                    diversify our domain and will be a leading conglomerate in Nepal, We will develop the best
-                    technology through innovation and apply them in every possible domain. We have a highly dedicated
-                    and expert IT team providing world-class solutions and support from analysis to development and from
-                    testing to implementation phase.</p>
+</div>
+
+<!-- Our Story Section -->
+<div class="py-4" style="background-color: var(--soft-white);">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="our-story-content">
+                    <h1 class="display-6 fw-bold fs-3 fs-md-4">Welcome to EEE Innovation Ghar</h1>
+                    <p class="text-justify fs-6 fs-md-5">Established on February 12, 2019, EEE Innovation Ghar Pvt. Ltd stands as a beacon of technological advancement in Nepal. Our mission is to deliver cutting-edge solutions in Engineering, Education, and Entertainment while providing exceptional IT services to the global market, leveraging the unparalleled talent of Nepal.</p>
+                    <p class="text-justify fs-6 fs-md-5">Our motto is to be the best outsourcing company in both the local and global markets. EEE Innovation Ghar Pvt. Ltd is tied up with a Japanese Tech company named "B-icon. Inc" and provides various IT solutions to them. We aim to diversify our domain in the near future, becoming a leading conglomerate in Nepal by applying innovation across multiple sectors.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="{{ asset('our-story.png') }}" alt="Our Story" class="img-fluid" style="max-width: 100%; height: auto;">
             </div>
         </div>
-        <div class="our-story-right loading_for_right">
-            <img src="{{asset('our-story.png')}}" alt="" height="400" width="400">
 
-        </div>
-    </div>
-    <div class="our-story-section" style=" background-color: var(--soft-white); ">
-        <div class="our-story-left loading_for_left">
-            <img src="{{asset('our-story.png')}}" alt="" height="400" width="400">
-
-        </div>
-        <div class="our-story-right loading_for_right">
-            <div class="our-story-content">
-                <h1>Our Vision</h1>
-                <p class="text-justify">
-                    Established on February 12, 2019, EEE Innovation Ghar Pvt. Ltd stands as a beacon of technological advancement in Nepal. Our mission is to deliver cutting-edge solutions in Engineering, Education, and Entertainment while providing exceptional IT services to the global market, leveraging the unparalleled talent of Nepal.
-                </p>
-                <h1>Our Expertise</h1>
-                <p class="text-justify">
-                    Driven by our motto of excellence, our dedicated team of experts is at the forefront of innovation, crafting bespoke solutions tailored to meet the evolving needs of our clients. From meticulous analysis to seamless development, rigorous testing, and flawless implementation, we are committed to delivering world-class solutions every step of the way.
-                </p>
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-1 mb-4 mb-lg-0">
+                <div class="our-story-content">
+                    <h1 class="display-6 fw-bold fs-3 fs-md-4">Our Vision</h1>
+                    <p class="text-justify fs-6 fs-md-5">EEE Innovation Ghar Pvt. Ltd envisions becoming a technological leader in Nepal, delivering solutions that redefine excellence in Engineering, Education, and Entertainment.</p>
+                    <h1 class="display-6 fw-bold fs-3 fs-md-4">Our Expertise</h1>
+                    <p class="text-justify fs-6 fs-md-5">Our dedicated team crafts bespoke solutions to meet evolving client needs. From analysis to development, rigorous testing, and seamless implementation, we ensure world-class solutions at every step.</p>
+                </div>
             </div>
-
-
+            <div class="col-lg-6 text-center order-lg-2">
+                <img src="{{ asset('our-story.png') }}" alt="Our Vision" class="img-fluid" style="max-width: 100%; height: auto;">
+            </div>
         </div>
     </div>
+</div>
+
+
+
 {{--start of why choose us--}}
-    <div class="feat bg-gray pt-5 pb-5" style=" background-color: var(--soft-white);overflow:hidden; ">
-        <div class="container">
-            <div class="row">
-                <div class="section-head col-sm-12">
-                    <h4><span>Why Choose</span> Us?</h4>
-                    <p>When you choose us, you'll feel the benefit of 10 years' experience of Web Development. Because we know the digital world and we know that how to handle it. With working knowledge of online, SEO and social media.</p>
+<div class="feat bg-gray pt-5 pb-5" style="background-color: var(--soft-white); overflow: hidden;">
+    <div class="container">
+        <div class="row">
+            <div class="section-head col-12 text-center mb-4">
+                <h4 class="display-6"><span>Why Choose</span> Us?</h4>
+                <p class="lead">When you choose us, you'll feel the benefit of 10 years' experience of Web Development. We know the digital world and understand how to handle it effectively, with expertise in SEO, social media, and online strategy.</p>
+            </div>
+
+            <!-- Features Section -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_one"><i class="fa fa-globe fa-2x"></i></span>
+                    <h6 class="mt-3">Modern Design</h6>
+                    <p>We use the latest technology to meet the demands of today’s digital world.</p>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-globe"></i></span>
-                        <h6>Modern Design</h6>
-                        <p>We use latest technology for the latest world because we know the demand of peoples.</p>
-                    </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_two"><i class="fa fa-anchor fa-1x"></i></span>
+                    <h6 class="mt-3">Creative Design</h6>
+                    <p>We blend creativity with customer feedback to deliver standout designs.</p>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-anchor"></i></span>
-                        <h6>Creative Design</h6>
-                        <p>We are always creative and and always lisen our costomers and we mix these two things and make beast design.</p>
-                    </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_three"><i class="fa fa-hourglass-half fa-1x"></i></span>
+                    <h6 class="mt-3">24 x 7 User Support</h6>
+                    <p>Our team is available around the clock to assist you with any questions or issues.</p>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-hourglass-half"></i></span>
-                        <h6>24 x 7 User Support</h6>
-                        <p>If our customer has any problem and any query we are always happy to help then.</p>
-                    </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_four"><i class="fa fa-database fa-1x"></i></span>
+                    <h6 class="mt-3">Business Growth</h6>
+                    <p>Our solutions are crafted to foster growth and help you reach new heights.</p>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-                        <h6>Business Growth</h6>
-                        <p>Everyone wants to live on top of the mountain, but all the happiness and growth occurs while you're climbing it</p>
-                    </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_five"><i class="fa fa-upload fa-1x"></i></span>
+                    <h6 class="mt-3">Market Strategy</h6>
+                    <p>We use innovative strategies to stay ahead in today’s fast-paced market.</p>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-                        <h6>Market Strategy</h6>
-                        <p>Holding back technology to preserve broken business models is like allowing blacksmiths to veto the internal combustion engine in order to protect their horseshoes.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-                        <h6>Affordable cost</h6>
-                        <p>Love is a special word, and I use it only when I mean it. You say the word too much and it becomes cheap.</p>
-                    </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="item text-center">
+                    <span class="icon feature_box_col_six"><i class="fa fa-camera fa-1x"></i></span>
+                    <h6 class="mt-3">Affordable Cost</h6>
+                    <p>We provide high-quality services at competitive rates.</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
         {{-- end start of why choose us--}}
 
 {{--        start of our team--}}
@@ -144,14 +149,14 @@
 <section class="overflow-hidden">
     <div class="row d-flex justify-content-center">
         <div class="col-md-10 col-xl-8 text-center">
-            <h1 class="mb-4 text-danger">Our Students Speak: Real Experiences, Real Success Stories</h1>
+            <h1 class="mb-4 text-danger" style="padding: 1rem;">Our Students Speak: Real Experiences, Real Success Stories</h1>
             <p class="mb-4 pb-2 mb-md-5 pb-md-0">
 
             </p>
         </div>
     </div>
 
-    <div class="container swiper">
+    <div class=" swiper">
         <div class="card-wrapper">
             <!-- Card slides container -->
             <ul class="card-list swiper-wrapper">
