@@ -1,8 +1,9 @@
 <nav style="position: sticky; top:0; z-index:999; background:none; width:100%;">
     <div class="nav-bar">
         <li class="logo">
-            <a href="{{route('home')}}">
-                <img src="{{asset('logo.png')}}" class="w-[40px]" />
+            <a style="text-decoration:none;margin-left: 3.9rem;" href="{{route('home')}}" >
+                {{-- <img src="{{asset('logo.png')}}" class="w-[40px]" /> --}}
+                <h1 style="font-size: 4em;"> <span style="color: #de5fa8">E</span>EE</h1>
             </a>
         </li>
         <input type="checkbox" id="check" />

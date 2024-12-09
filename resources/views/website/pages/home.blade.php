@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="hero-section-right">
-                    <video class="hero-video" src="{{ asset('raw.mp4') }}" autoplay loop muted></video>
+                    <img class="hero-video" src="{{ asset('logo.png') }}" autoplay loop muted></video>
                 </div>
             </div>
         </div>
