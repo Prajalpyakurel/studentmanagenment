@@ -112,7 +112,7 @@
             <h2 class="fw-bold fs-1 underline-heading text-danger">Our Services</h2>
         </div>
 
-        <div class="row">
+        <div class="row d-flex">
             <!-- Web Development Service -->
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="item text-center">
@@ -227,7 +227,7 @@
     <!--Why Choose Us-->
     <section class="course-categories">
         <h2 class="text-danger text-center">Why Choose EEE?</h2>
-        <div clategass="cory-grid">
+        <div class="category-grid">
             <div class="category-card">
                 <i class="fa-solid fa-code text-dark"></i>
                 <h3 class="text-danger">Expert Web & App Development</h3>
@@ -304,51 +304,28 @@
             </div>
         </div>
 
-        <div class=" container">
-            @foreach ($testimonials as $testimonial)
-                <div class="card" style="width: 18rem;">
-                    @if ($testimonial->client_photo)
-                    <img src="{{ asset('storage/' . $testimonial->client_photo) }}" alt="Client Photo"
-                        class="card-img-top">
-                @endif
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $testimonial->client_name }}</h5>
-                        <p class="card-text">{!! Str::words($testimonial->description, 15, ' ...') !!}</p>
-                        {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center">
+                @foreach ($testimonials as $testimonial)
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch">
+                        <div class="card" style="width: 100%;"> <!-- Ensures card occupies full column width -->
+                            @if ($testimonial->client_photo)
+                                <img src="{{ asset('storage/' . $testimonial->client_photo) }}" alt="Client Photo" class="card-img-top">
+                            @endif
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $testimonial->client_name }}</h5>
+                                <p class="card-text">{!! Str::words($testimonial->description, 15, ' ...') !!}</p>
+                                {{-- <a href="#" class="btn btn-primary">Read More</a> --}}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
 
 
-        {{-- <div class="swiper ">
-            <div class="card-wrapper">
-                <!-- Card slides container -->
-                <ul class="card-list swiper-wrapper">
-                    @foreach ($testimonials as $testimonial)
-                        <li class="card-item swiper-slide">
-                            <div class="card-link " style="">
-                                <div class="d-flex">
-                                    @if ($testimonial->client_photo)
-                                        <img src="{{ asset('storage/' . $testimonial->client_photo) }}" alt="Client Photo"
-                                            class="card-image" style="width: 100px;height:100px;">
-                                    @endif
-                                </div>
-                                <h3 class="d-flex justify-center mt-2" style="color: #de5fa8">
-                                    {{ $testimonial->client_name }}</h1>
-                                    <h2 class="card-title">{!! Str::words($testimonial->description, 50, ' ...') !!}</h2>
-                            </div>
-                        </li>
-                    @endforeach
 
-                </ul>
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Navigation Buttons -->
-                <div class="swiper-slide-button swiper-button-prev"></div>
-                <div class="swiper-slide-button swiper-button-next"></div>
-            </div>
-        </div> --}}
+
 
 
 

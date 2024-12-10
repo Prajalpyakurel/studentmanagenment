@@ -156,21 +156,25 @@
         </div>
     </div>
 
-    <div class=" container">
-        @foreach ($testimonials as $testimonial)
-            <div class="card" style="width: 18rem;">
-                @if ($testimonial->client_photo)
-                <img src="{{ asset('storage/' . $testimonial->client_photo) }}" alt="Client Photo"
-                    class="card-img-top">
-            @endif
-                <div class="card-body">
-                    <h5 class="card-title">{{ $testimonial->client_name }}</h5>
-                    <p class="card-text">{!! Str::words($testimonial->description, 15, ' ...') !!}</p>
-                    {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center">
+            @foreach ($testimonials as $testimonial)
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch">
+                    <div class="card" style="width: 100%;"> <!-- Ensures card occupies full column width -->
+                        @if ($testimonial->client_photo)
+                            <img src="{{ asset('storage/' . $testimonial->client_photo) }}" alt="Client Photo" class="card-img-top">
+                        @endif
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $testimonial->client_name }}</h5>
+                            <p class="card-text">{!! Str::words($testimonial->description, 15, ' ...') !!}</p>
+                            {{-- <a href="#" class="btn btn-primary">Read More</a> --}}
+                        </div>
+                    </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
+
 
 
 
