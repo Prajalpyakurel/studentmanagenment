@@ -2255,6 +2255,22 @@ body .form-group:not(:last-child) {
         display: none;
 
     }
+    .first-step{
+        display: none;
+
+    }
+    .second-step{
+        display: none;
+
+    }
+    .third-step{
+        display: none;
+
+    }
+    .fifth-step{
+        display: none;
+
+    }
 }
 
 @media screen and (max-width: 1024px) {

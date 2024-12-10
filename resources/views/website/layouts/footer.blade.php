@@ -59,7 +59,7 @@
                     <h6 class="text-uppercase fw-bold mb-4">
                         <a href="#" class="text-dark" style="text-decoration: none"><img src="{{asset('logo.png')}}" width="50px" alt="EEE Innovation Ghar Logo">EEE Innovation Ghar</a>
                     </h6>
-                    <p class=" para">Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p class=" para">"A Complete IT solutions & Computer Training Center."</p>
                 </div>
 
                 <!-- Grid column: Products -->
@@ -88,11 +88,15 @@
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4" style="color:#4A60AB;">Contact</h6>
-                    <p><i class="fas fa-home me-3"></i> Swoyambhu, Kathmandu</p>
-                    <p><i class="fas fa-envelope me-3"></i> eeeinnovation769@gmail.com</p>
-                    <a class="fs-xs fw-semibold tel-num" href="tel:+9779863033916" style="text-decoration: none;">
-                        <i class="fas fa-phone me-3"></i> +977 9863033916
-                    </a>
+                    <a href="https://maps.app.goo.gl/shnvWnesUxdGRMqM6" class="fs-xs fw-semibold" style="text-decoration: none;"><i class="fas fa-home me-3"></i> Swoyambhu, Kathmandu</p></a>
+                    <p><i class="fas fa-envelope me-3"></i> info@eeeinnovation.com.np</p>
+                    <a class="fs-xs fw-semibold tel-num" href="tel:+9779860996281" style="text-decoration: none;">
+                        <i class="fas fa-phone me-3"></i> +9779860996281 |
+                    </a> <span>
+                        <a class="fs-xs fw-semibold tel-num" href="tel:+977015247384" style="text-decoration: none;">
+                             +977 015247384
+                        </a>
+                    </span>
                 </div>
 
                 <!-- Grid column: Email Subscription -->
