@@ -16,11 +16,11 @@
                 <p>No clients available</p>
             @else
                 @foreach ($clients as $client)
-                    <div class="col-md-4 mb-4">
+                    <div class="col-lg-2 col-md-3 col-sm-6 mb-4 d-flex align-items-stretch">
                         <a href="{{ $client->link }}" target="_blank" class="text-decoration-none">
-                            <div class="card" style="width: 18rem;">
+                            <div class="card" style="width: 100%;"> <!-- Ensures the card takes full column width -->
                                 @if ($client->logo)
-                                    <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name }}" class="img-fluid">
+                                    <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name }}" class="img-fluid card-img-top">
                                 @else
                                     <p>No logo available</p>
                                 @endif
@@ -34,4 +34,5 @@
             @endif
         </div>
     </section>
+
 @endsection

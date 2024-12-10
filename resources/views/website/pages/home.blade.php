@@ -343,16 +343,8 @@
         <div class="text-center what-we-do-heading mb-5">
             <h1 class="text-danger">Our Achievements</h1>
         </div>
-        <style>
-                .prajal{
-                    display: flex;
-                     justify-content: center; /* Centers items horizontally */
-                     align-items: center;    /* Centers items vertically */
-                     min-height: 100vh;      /* Optional: makes the row fill the viewport height */
-                     flex-wrap: wrap;        /* Ensures items wrap if they don't fit in one row */
-                }
-        </style>
-        <div class="row text-center d-flex flex-lg-wrap justify-content-center align-items-center prajal">
+
+        <div class="row text-center d-flex flex-lg-wrap justify-content-center align-items-center ">
             <div class="col-md-3 col-sm-3 mb-4">
                 <div class="achivements-container">
                     <div class="counter-text-section">
