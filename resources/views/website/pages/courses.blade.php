@@ -7,7 +7,7 @@
         <img src="{{ asset('web.jpg') }}" alt="Background Image"
             class="background-image img-fluid position-absolute w-100 h-100 object-fit-cover">
         <div class="text-content position-relative p-4 z-index-2">
-            <h1 class="display-4 fw-bold text-danger">Explore Our Courses</h1>
+            <h1 class="display-4 fw-bold " style="color: white">Explore Our Courses</h1>
             <p class="lead fw-bold">Discover a wide range of IT courses designed to help you succeed in the digital world.
             </p>
         </div>

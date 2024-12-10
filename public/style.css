@@ -2170,6 +2170,12 @@ body .form-group:not(:last-child) {
         transform: none; /* No transform for small screens */
         text-align: center;
     }
+    .our-working-process-section {
+        background-color: white;
+        position: relative;
+        padding-top: 5vh;
+        margin-bottom: 0px;
+    }
 }
 
 /*about us section*/
@@ -2241,6 +2247,13 @@ body .form-group:not(:last-child) {
 
     #check:checked~.menu {
         right: 0;
+    }
+    .process-image{
+        display: none;
+    }
+    .forth-step{
+        display: none;
+
     }
 }
 

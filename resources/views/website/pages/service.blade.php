@@ -6,8 +6,8 @@
     <div class="top_banner">
         <img src="{{ asset('background.jpg') }}" alt="Banner Image" width="100%">
         <div class="centered">
-            <h1>Services</h1>
-            <p>Home > Services</p>
+            <h1 style="color: white;">Services</h1>
+            <p style="color: white;">Home > Services</p>
         </div>
     </div>
     {{-- End of Service Banner --}}

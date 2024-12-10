@@ -145,41 +145,38 @@
     </div>
                 {{--end of our team --}}
                 <!--    End Our Story Section-->
-{{-- Testimonial section --}}
-<section class="overflow-hidden">
-    <div class="row d-flex justify-content-center">
+ {{-- Testimonial section --}}
+ <section class="overflow-hidden">
+    <div class="row d-flex justify-content-center mt-5">
         <div class="col-md-10 col-xl-8 text-center">
-            <h1 class="mb-4 text-danger" style="padding: 1rem;">Our Students Speak: Real Experiences, Real Success Stories</h1>
+            <h1 class="mb-4 text-danger">Our Students Speak: Real Experiences, Real Success Stories</h1>
             <p class="mb-4 pb-2 mb-md-5 pb-md-0">
 
             </p>
         </div>
     </div>
 
-    <div class=" swiper">
-        <div class="card-wrapper">
-            <!-- Card slides container -->
-            <ul class="card-list swiper-wrapper">
-                @foreach ($testimonials as $testimonial)
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            @if($testimonial->client_photo)
-                            <img src="{{ asset('storage/'.$testimonial->client_photo) }}" alt="Client Photo" class="card-image">
-                        @endif
-                            <h3 class="d-flex justify-center mt-2" style="color: #de5fa8" >{{ $testimonial->client_name }}</h1>
-                            <h2 class="card-title" >{!! Str::words($testimonial->description, 50, ' ...') !!}</h2>
-                        </div>
-                    </li>
-                @endforeach
-
-            </ul>
-            <!-- Pagination -->
-            <div class="swiper-pagination"></div>
-            <!-- Navigation Buttons -->
-            <div class="swiper-slide-button swiper-button-prev"></div>
-            <div class="swiper-slide-button swiper-button-next"></div>
-        </div>
+    <div class=" container">
+        @foreach ($testimonials as $testimonial)
+            <div class="card" style="width: 18rem;">
+                @if ($testimonial->client_photo)
+                <img src="{{ asset('storage/' . $testimonial->client_photo) }}" alt="Client Photo"
+                    class="card-img-top">
+            @endif
+                <div class="card-body">
+                    <h5 class="card-title">{{ $testimonial->client_name }}</h5>
+                    <p class="card-text">{!! Str::words($testimonial->description, 15, ' ...') !!}</p>
+                    {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+                </div>
+            </div>
+        @endforeach
     </div>
+
+
+
+
+
 </section>
+{{-- end of Testimonial section --}}
 @endsection
 

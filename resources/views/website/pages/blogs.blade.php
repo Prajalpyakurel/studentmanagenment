@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<section class="related-cntn py-5">
+{{-- <section class="related-cntn py-5">
     <div class="container">
         <div class="title-2 text-center mb-4">
             <h2 class="text-danger">Read our related content Blogs</h2>
@@ -92,7 +92,7 @@
 
         </div>
     </div>
-</section>
+</section> --}}
 @endsection
 
 <style>
