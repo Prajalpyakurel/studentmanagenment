@@ -20,6 +20,6 @@
             <label for="price">Price (Nrs.)</label>
             <input type="number" name="price" class="form-control">
         </div>
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary mt-2">Create</button>
     </form>
 @endsection

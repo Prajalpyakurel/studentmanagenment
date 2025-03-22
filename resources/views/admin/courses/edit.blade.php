@@ -22,6 +22,6 @@
             <label for="price">Price (Nrs.)</label>
             <input type="number" name="price" class="form-control" value="{{ $course->price }}">
         </div>
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary mt-3">Update</button>
     </form>
 @endsection

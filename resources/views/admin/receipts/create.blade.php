@@ -17,7 +17,7 @@
             @csrf
             <div class="form-group">
                 <label for="phone">Phone Number:</label>
-                <input type="text" class="form-control" id="phone" name="phone" required>
+                <input type="number" class="form-control" id="phone" name="phone" required>
             </div>
 
             <div class="form-group">
@@ -58,7 +58,7 @@
                 <input type="text" class="form-control" id="transaction_id" name="transaction_id">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
     </div>
 

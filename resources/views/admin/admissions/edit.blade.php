@@ -31,7 +31,7 @@
             <label for="remaining_fee">Remaining Fee</label>
             <input type="number" name="remaining_fee" class="form-control" value="{{ $admission->remaining_fee }}" required>
         </div>
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary mt-3">Update</button>
     </form>
     <script>
         document.getElementById('course_id').addEventListener('change', function() {

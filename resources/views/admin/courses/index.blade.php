@@ -6,12 +6,12 @@
     <a href="{{ route('admin.courses.create') }}" class="btn btn-primary">Create New Course</a>
 
     @if (session('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success m-3">
             {{ session('success') }}
         </div>
     @endif
 
-    <table class="table">
+    <table class="table mt-3">
         <thead>
             <tr>
                 <th>Title</th>

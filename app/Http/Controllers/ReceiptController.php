@@ -84,7 +84,7 @@ class ReceiptController extends Controller
             $request->payment_method,  // source
             $request->amount_received, // amount
             'Tuition Fee',             // category (optional)
-            'Payment received for Receipt #' . $receipt->id, // description (optional)
+            'Payment received from ' . $receipt->phone, // description (optional)
             $request->payment_date     // date
         );
 

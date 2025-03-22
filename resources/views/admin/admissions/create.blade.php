@@ -7,7 +7,7 @@
 
         <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="text" name="phone" class="form-control" required>
+            <input type="number" name="phone" class="form-control" required>
             @if ($errors->has('phone'))
             <p style="color: red">
                 {{ $errors->first('phone') }}
@@ -54,7 +54,7 @@
             </p>
         @endif
         </div>
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary mt-3">Create</button>
     </form>
     <script>
         document.getElementById('course_id').addEventListener('change', function() {

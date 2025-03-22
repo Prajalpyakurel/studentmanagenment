@@ -28,7 +28,7 @@
                                 <th>Name</th>
                                 <th>Amount Received</th>
                                 <th>Payment Date</th>
-                                <th>Payment Method</th> <!-- New Column -->
+                                <th>Payment Method</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -40,7 +40,7 @@
                                     <td>{{ $receipt->admission->name }}</td>
                                     <td>Nrs.{{ number_format($receipt->amount_received, 2) }}</td>
                                     <td>{{ $receipt->formatted_payment_date }}</td>
-                                    <td>{{ ucfirst($receipt->payment_method) }}</td> <!-- Display Payment Method -->
+                                    <td>{{ ucfirst($receipt->payment_method) }}</td>
                                     <td>
                                         <a href="{{ route('admin.receipts.edit', $receipt->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                     </td>

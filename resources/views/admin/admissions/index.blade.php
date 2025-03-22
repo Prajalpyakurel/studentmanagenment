@@ -32,7 +32,7 @@
         </div>
         <div class="card col-3 d-flex align-items-center justify-content-center pt-3 bg-danger">
             <div class="card-body text-center" style="color: rgb(255, 255, 255);">
-                <strong>Total Remaining Fee:</strong>
+                <strong>Total Remaining Fee:</strong> <br>
                 Nrs.{{ number_format($total_remaining_fee, 2) }}<br>
             </div>
         </div>
