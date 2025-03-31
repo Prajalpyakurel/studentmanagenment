@@ -51,7 +51,7 @@
         <div class="d-flex align-items-center justify-content-between">
             <a href="{{ route('admin.home') }}" class="logo d-flex align-items-center">
                 <img src="{{ asset('admin/img/logo.png') }}" alt="">
-                <span class="d-none d-lg-block">Student Mgmt</span>
+                <span class="d-none d-lg-block"> IMS</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -92,9 +92,9 @@
 
 
             <!-- Logout Button -->
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-flex">
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-flex" sty>
                 @csrf
-                <button type="submit" class="btn btn-danger">Logout</button>
+                <button type="submit" class="btn btn-danger" style="margin-right: 142px;">Logout</button>
             </form>
 
 
@@ -127,7 +127,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="">
-                    <i class="bi bi-journal-text"></i><span>Student Managenment</span><i
+                    <i class="bi bi-journal-text"></i><span>IMS</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">

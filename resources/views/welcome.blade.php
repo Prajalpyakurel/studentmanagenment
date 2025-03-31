@@ -88,7 +88,7 @@
     <section class="hero">
         <h1>Efficiently Manage Your Institute</h1>
         <p>Streamline student enrollments, course management, and financial tracking with ease.</p>
-        <a href="#contact" class="btn btn-primary-custom">Get Started</a>
+        <a href="/login" class="btn btn-primary-custom">Get Started</a>
     </section>
 
     <section class=" container">
@@ -117,19 +117,7 @@
         </div>
     </section>
 
-    <section id="contact" class="contact text-center">
-        <h2>Contact Us</h2>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <input type="text" class="form-control mb-3" placeholder="Your Name">
-                    <input type="email" class="form-control mb-3" placeholder="Your Email">
-                    <textarea class="form-control mb-3" rows="4" placeholder="Your Message"></textarea>
-                    <button class="btn btn-light">Send Message</button>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
