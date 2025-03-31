@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form action="{{ route('cashflows.update', $cashFlow->id) }}" method="POST">
+    <form action="{{ route('admin.cashflows.update', $cashFlow->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">
