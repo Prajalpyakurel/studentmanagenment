@@ -68,10 +68,18 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
 
 Route::get('/', [FrontendHomeController::class, 'index'])->name('home');
+Route::get('/courses', [FrontendHomeController::class, 'courses'])->name('courses');
+Route::get('/detail/{id}', [FrontendHomeController::class, 'detail'])->name('course.detail');
+Route::post('/courses/{course}/book', [FrontendHomeController::class, 'CourseBooking'])->name('courses.book');
 
-Route::get('/courses', function () {
-    return view('website.pages.coursedetail');
-});
+// Route::get('/course/{slug}', [FrontendHomeController::class, 'courseDetail'])->name('course.detail');
+
+
+
+
+// Route::get('/courses', function () {
+//     return view('website.pages.coursedetail');
+// });
 
 
 
