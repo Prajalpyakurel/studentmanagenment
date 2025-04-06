@@ -14,8 +14,8 @@
 						<h1>Achieve Your Dreams.</h1>
 						<h1>Book your Course.</h1>
 						<div class="btn-item">
-							<a class="btn get-btn" href="courses.html">Get Started</a>
-							<a class="btn courses-btn" href="courses.html">All Courses</a>
+							{{-- <a class="btn get-btn" href="courses.html">Get Started</a> --}}
+							<a class="btn courses-btn" href="{{ route('courses') }}">All Courses</a>
 						</div>
 					</div>
 				</div>
@@ -56,9 +56,7 @@
 										<div class="left">3.2</div>
 										<div class="right">Nrs.{{$course->price}}</div>
 									</div>
-									<div class="course-user">
-										<img src="assets/img/instructors/instructor-thumb-01.jpg" alt="" class="img-fluid">
-									</div>
+
 								</div>
 								<div class="course-content">
 									<h5>{{$course->title}}</h5>
@@ -95,7 +93,7 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="see-all  text-center">
-							<a href="courses.html" class="btn all-btn">View all <i
+							<a href="{{ route('courses') }}" class="btn all-btn">View all <i
 									class="fas fa-caret-right right-arrow"></i></a>
 						</div>
 					</div>

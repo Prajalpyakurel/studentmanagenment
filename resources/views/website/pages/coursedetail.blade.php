@@ -155,9 +155,8 @@
 
 
 
-                    <div class="load-more text-center">
-                        <a class="btn btn-primary btn-sm" href="javascript:void(0);">Load More</a>
-                    </div>
+
+
                 </div>
             </div>
 
