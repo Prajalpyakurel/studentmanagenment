@@ -8,12 +8,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ReceiptController;
 use App\Http\Controllers\CashFlowController;
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\TrainingController;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\WebsiteController;
-use App\Http\Controllers\TrainingCategoryController;
+
 
 
 
@@ -63,7 +58,6 @@ Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(func
     Route::put('/cashflows/{id}', [CashFlowController::class, 'update'])->name('cashflows.update');
     Route::delete('/cashflows/{id}', [CashFlowController::class, 'destroy'])->name('cashflows.destroy');
 
-   
 
 
 
@@ -72,7 +66,12 @@ Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(func
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('website.pages.home');
+});
+
+
+Route::get('/courses', function () {
+    return view('website.pages.coursedetail');
 });
 
 

@@ -28,9 +28,24 @@ class CourseController extends Controller
             'description' => 'nullable|string',
             'duration' => 'required|integer',
             'price' => 'nullable|numeric',
+            'pdf' => 'nullable|mimes:pdf|max:2048', // Validate PDF upload
         ]);
 
-        Course::create($request->all());
+        $pdfPath = null;
+        if ($request->hasFile('pdf')) {
+            $pdfPath = $request->file('pdf')->store('courses_pdfs', 'public');
+        }
+
+        Course::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'Category' => $request->Category,
+            'duration' => $request->duration,
+            'availableSeat' => $request->availableSeat,
+            'totalSeat' => $request->totalSeat,
+            'price' => $request->price,
+            'pdf_path' => $pdfPath,
+        ]);
 
         return redirect()->route('admin.courses.index')->with('success', 'Course created successfully.');
     }
