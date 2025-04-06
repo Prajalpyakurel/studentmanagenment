@@ -10,22 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CourseBookingController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(function ($request, $next) {
-            if (Auth::check()) {
-                // Fetch bookings with related course info
-                $userBookings = CourseBooking::with('course')
-                    ->where('user_id', Auth::id())
-                    ->get();
 
-                // Share with all views
-                View::share('userBookings', $userBookings);
-            }
-
-            return $next($request);
-        });
-    }
     public function index()
     {
         $bookings = CourseBooking::with('course')->latest()->paginate(10);
