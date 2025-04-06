@@ -8,6 +8,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ReceiptController;
 use App\Http\Controllers\CashFlowController;
+use App\Http\Controllers\frontend\FrontendHomeController;
 
 
 
@@ -22,8 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
-Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(function () {
+require __DIR__ . '/auth.php';
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/home', [AdmissionController::class, 'report'])->name('home');
     Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
     Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
@@ -65,10 +66,8 @@ Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(func
 
 
 
-Route::get('/', function () {
-    return view('website.pages.home');
-});
 
+Route::get('/', [FrontendHomeController::class, 'index'])->name('home');
 
 Route::get('/courses', function () {
     return view('website.pages.coursedetail');

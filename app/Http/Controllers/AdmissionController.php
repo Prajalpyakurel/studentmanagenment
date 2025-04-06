@@ -18,30 +18,30 @@ class AdmissionController extends Controller
         $admissions = Admission::with('course')
             ->when($search, function ($query, $search) {
                 return $query->where('name', 'LIKE', "%{$search}%")
-                             ->orWhere('phone', 'LIKE', "%{$search}%")
-                             ->orWhereHas('course', function ($q) use ($search) {
-                                 $q->where('title', 'LIKE', "%{$search}%");
-                             });
+                    ->orWhere('phone', 'LIKE', "%{$search}%")
+                    ->orWhereHas('course', function ($q) use ($search) {
+                        $q->where('title', 'LIKE', "%{$search}%");
+                    });
             })
             ->orderBy('created_at', 'desc') // Order by latest admissions first
             ->paginate(10); // Paginate results, 10 per page
 
         // Calculate the total fees
         $total_fee = Admission::when($search, function ($query, $search) {
-                        return $query->where('name', 'LIKE', "%{$search}%")
-                                     ->orWhere('phone', 'LIKE', "%{$search}%")
-                                     ->orWhereHas('course', function ($q) use ($search) {
-                                         $q->where('title', 'LIKE', "%{$search}%");
-                                     });
-                    })->sum('total_fee');
+            return $query->where('name', 'LIKE', "%{$search}%")
+                ->orWhere('phone', 'LIKE', "%{$search}%")
+                ->orWhereHas('course', function ($q) use ($search) {
+                    $q->where('title', 'LIKE', "%{$search}%");
+                });
+        })->sum('total_fee');
 
         $total_remaining_fee = Admission::when($search, function ($query, $search) {
-                                return $query->where('name', 'LIKE', "%{$search}%")
-                                             ->orWhere('phone', 'LIKE', "%{$search}%")
-                                             ->orWhereHas('course', function ($q) use ($search) {
-                                                 $q->where('title', 'LIKE', "%{$search}%");
-                                             });
-                            })->sum('remaining_fee');
+            return $query->where('name', 'LIKE', "%{$search}%")
+                ->orWhere('phone', 'LIKE', "%{$search}%")
+                ->orWhereHas('course', function ($q) use ($search) {
+                    $q->where('title', 'LIKE', "%{$search}%");
+                });
+        })->sum('remaining_fee');
 
         $total_paid_fee = $total_fee - $total_remaining_fee;
 
