@@ -1,5 +1,5 @@
-<!-- Header -->
-    <header class="header min-header">
+
+    <header class="header min-header" style="background-color:green;">
 				<nav class="navbar navbar-expand-lg header-nav">
 					<div class="navbar-header">
 						<a id="mobile_btn" href="javascript:void(0);">
@@ -10,7 +10,7 @@
 							</span>
 						</a>
 						<a href="/" class="navbar-brand logo">
-							<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+							<h1 style="color: #fff"> IMS</h1>
 						</a>
 					</div>
 					<div class="main-menu-wrapper">
@@ -24,7 +24,7 @@
 						</div>
 						<ul class="main-nav">
 
-							<li class="has-submenu active">
+							<li class="">
 								<a href="/">HOME </a>
 
 							</li>
@@ -59,13 +59,15 @@
                                 </form>
                             </li>
                         @endguest
-
                         <li class="course-amt">
-                            <a href="courses.html" class="user-circle"><img src="assets/img/course.png" width="22" alt=""></a>
-                            <a href="courses.html" class="course">
+                            <a href="#" class="user-circle" data-bs-toggle="modal" data-bs-target="#bookedCoursesModal">
+                                <img src="assets/img/course.png" width="22" alt="">
+                            </a>
+                            <a href="#" class="course" data-bs-toggle="modal" data-bs-target="#bookedCoursesModal">
                                 <span>Courses</span>
                             </a>
                         </li>
+
                     </ul>
 
 

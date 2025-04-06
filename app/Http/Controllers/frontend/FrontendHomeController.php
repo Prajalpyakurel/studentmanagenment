@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 use App\Models\Course;
 use App\Http\Controllers\Controller;
 use App\Models\CourseBooking;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 

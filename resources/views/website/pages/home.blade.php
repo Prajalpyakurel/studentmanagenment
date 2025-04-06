@@ -10,7 +10,7 @@
 			<div class="row">
 				<div class="col-lg-7 col-md-7">
 					<div class="banner-content">
-						<p>DreamsCLG</p>
+						<p>IMS</p>
 						<h1>Achieve Your Dreams.</h1>
 						<h1>Book your Course.</h1>
 						<div class="btn-item">
