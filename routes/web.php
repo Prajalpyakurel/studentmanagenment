@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CourseBookingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdmissionController;
@@ -60,7 +60,11 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::delete('/cashflows/{id}', [CashFlowController::class, 'destroy'])->name('cashflows.destroy');
 
 
-
+    Route::get('/bookings', [CourseBookingController::class, 'index'])->name('bookings.index');
+    Route::patch('/bookings/{booking}/status', [CourseBookingController::class, 'updateStatus'])->name('bookings.status');
+    Route::get('/bookings/{booking}/edit', [CourseBookingController::class, 'edit'])->name('bookings.edit');
+    Route::put('/bookings/{booking}', [CourseBookingController::class, 'update'])->name('bookings.update');
+    Route::delete('/bookings/{booking}', [CourseBookingController::class, 'destroy'])->name('bookings.destroy');
 
 });
 

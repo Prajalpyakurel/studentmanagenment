@@ -4,6 +4,8 @@
 
 
 
+
+
 	<!-- Home Banner -->
 	<section class="section home-banner row-middle">
 		<div class="container">
@@ -23,6 +25,8 @@
 		</div>
 	</section>
 	<!-- /Home Banner -->
+
+
 
 	<!-- Our Colleges -->
 	<section class="section college">
@@ -103,6 +107,10 @@
 		</div>
 	</section>
 	<!-- END courses -->
+
+
+
+
 
 
 

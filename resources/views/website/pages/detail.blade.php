@@ -85,10 +85,14 @@
                                     </div>
                                     <div class="clinic-booking">
 
-                                        <button type="button" class="btn btn-primary " data-bs-toggle="modal"
-                                            data-bs-target="#exampleModalCenter">
-                                            BOOK COURSE
-                                        </button>
+                                        @auth
+                                            <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                                                data-bs-target="#exampleModalCenter">
+                                                BOOK COURSE
+                                            </button>
+                                        @else
+                                            <a href="{{ route('login') }}" class="btn btn-primary">Login To Book</a>
+                                        @endauth
                                     </div>
 
                                 </div>
