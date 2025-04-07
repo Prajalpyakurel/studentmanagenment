@@ -1,25 +1,29 @@
-<!-- Footer -->	
+<!-- Footer -->
 <footer class="footer">
-				
+
 				<div class="footer-top">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-3 col-md-6">
-							
+
 								<!-- Footer Widget -->
 								<div class="footer-widget footer-about">
-									<h2 class="footer-title">ABOUT DreamsCLG</h2>
+									<h2 class="footer-title">ABOUT IMS</h2>
 									<div class="footer-about-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris </p>
-										
+										<p>The Institute Management System is a web-based application designed to automate and
+                                            streamline various administrative tasks in educational institutions. It focuses on enhancing the
+                                            management of student enrollments, course registrations, fee tracking, receipt generation, and
+                                            overall cash flow management. The system provides two distinct types of users: Admin and
+                                            User </p>
+
 									</div>
 								</div>
 								<!-- /Footer Widget -->
-								
+
 							</div>
-							
+
 							<div class="col-lg-3 col-md-6">
-							
+
 								<!-- Footer Widget -->
 								<div class="footer-widget footer-menu">
 									<h2 class="footer-title">POPULAR COURSES</h2>
@@ -32,11 +36,11 @@
 									</ul>
 								</div>
 								<!-- /Footer Widget -->
-								
+
 							</div>
-							
+
 							<div class="col-lg-3 col-md-6">
-							
+
 								<!-- Footer Widget -->
 								<div class="footer-widget footer-menu">
 									<h2 class="footer-title">SUPPORT</h2>
@@ -49,11 +53,11 @@
 									</ul>
 								</div>
 								<!-- /Footer Widget -->
-								
+
 							</div>
-							
+
 							<div class="col-lg-3 col-md-6">
-							
+
 								<!-- Footer Widget -->
 								<div class="footer-widget footer-contact">
 									<h2 class="footer-title">NEWSLETTER</h2>
@@ -65,21 +69,21 @@
 											<button class="btn btn-newsletter" type="submit"><i class="fa fa-paper-plane text-white" aria-hidden="true"></i></button>
 										</div>
 										</form>
-									</div>	
+									</div>
 								</div>
 								<!-- /Footer Widget -->
-								
+
 							</div>
-							
+
 						</div>
 					</div>
 				</div>
 				<!-- /Footer Top -->
-				
+
 				<!-- Footer Bottom -->
                 <div class="footer-bottom">
 					<div class="container">
-					
+
 						<!-- Copyright -->
 						<div class="copyright">
 							<div class="row">
@@ -106,12 +110,12 @@
 							</div>
 						</div>
 						<!-- /Copyright -->
-						
+
 					</div>
 				</div>
 				<!-- /Footer Bottom -->
-				
+
 			</footer>
 			<!-- /Footer -->
-		
+
 		</div>
