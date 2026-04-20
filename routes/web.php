@@ -2,12 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\CourseBookingController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ReceiptController;
 use App\Http\Controllers\CashFlowController;
+use App\Http\Controllers\frontend\FrontendHomeController;
 
 
 
@@ -22,8 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
-Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(function () {
+require __DIR__ . '/auth.php';
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/home', [AdmissionController::class, 'report'])->name('home');
     Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
     Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
@@ -58,16 +59,31 @@ Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(func
     Route::put('/cashflows/{id}', [CashFlowController::class, 'update'])->name('cashflows.update');
     Route::delete('/cashflows/{id}', [CashFlowController::class, 'destroy'])->name('cashflows.destroy');
 
-   
 
+    Route::get('/bookings', [CourseBookingController::class, 'index'])->name('bookings.index');
+    Route::patch('/bookings/{booking}/status', [CourseBookingController::class, 'updateStatus'])->name('bookings.status');
+    Route::get('/bookings/{booking}/edit', [CourseBookingController::class, 'edit'])->name('bookings.edit');
+    Route::put('/bookings/{booking}', [CourseBookingController::class, 'update'])->name('bookings.update');
+    Route::delete('/bookings/{booking}', [CourseBookingController::class, 'destroy'])->name('bookings.destroy');
 
 });
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [FrontendHomeController::class, 'index'])->name('home');
+Route::get('/courses', [FrontendHomeController::class, 'courses'])->name('courses');
+Route::get('/detail/{id}', [FrontendHomeController::class, 'detail'])->name('course.detail');
+Route::post('/courses/{course}/book', [FrontendHomeController::class, 'CourseBooking'])->name('courses.book');
+
+// Route::get('/course/{slug}', [FrontendHomeController::class, 'courseDetail'])->name('course.detail');
+
+
+
+
+// Route::get('/courses', function () {
+//     return view('website.pages.coursedetail');
+// });
 
 
 

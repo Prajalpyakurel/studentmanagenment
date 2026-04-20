@@ -127,8 +127,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="">
-                    <i class="bi bi-journal-text"></i><span>IMS</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-journal-text"></i><span>IMS</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
@@ -146,16 +145,21 @@
                             <i class="bi bi-circle"></i><span>Receipt</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{route('admin.bookings.index')}}">
+                            <i class="bi bi-circle"></i><span>Booking</span>
+                        </a>
+                    </li>
 
                 </ul>
             </li><!-- End Forms Nav -->
 
 
-            {{-- start of website managenment  --}}
+            {{-- start of website managenment --}}
 
 
 
-            {{-- end of website managenment  --}}
+            {{-- end of website managenment --}}
 
 
 
