@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
 class CourseBooking extends Model
 {
     use HasFactory;
@@ -15,7 +16,18 @@ class CourseBooking extends Model
         'email',
         'phone',
         'status',
-        'notes'
+        'notes',
+        'payment_method',
+        'payment_status',
+        'esewa_transaction_uuid',
+        'esewa_ref_id',
+        'amount_paid',
+        'paid_at',
+    ];
+
+    protected $casts = [
+        'paid_at' => 'datetime',
+        'amount_paid' => 'decimal:2',
     ];
 
     public function course()
@@ -26,5 +38,10 @@ class CourseBooking extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function isPaid(): bool
+    {
+        return $this->payment_status === 'paid';
     }
 }
